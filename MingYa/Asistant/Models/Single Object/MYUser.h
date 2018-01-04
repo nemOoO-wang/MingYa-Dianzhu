@@ -12,8 +12,10 @@
 
 @property (nonatomic, strong, readonly) NSString *token;
 @property (nonatomic, strong, readonly) NSString *userId;
+@property (nonatomic,strong) NSString *projectId;
+@property (nonatomic,strong) NSString *projectName;
 
 +(instancetype) defaultUser;
--(void) registToken:(NSString *)token andId:(NSString *)userId;
+-(void) registToken:(NSString *)token andId:(NSString *)userId andProjectId:(NSString *)projectId andProjectName:(NSString *)projectName;
 
 @end

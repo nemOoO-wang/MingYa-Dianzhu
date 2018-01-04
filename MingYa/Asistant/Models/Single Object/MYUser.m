@@ -23,9 +23,11 @@
     return user;
 }
 
--(void) registToken:(NSString *)token andId:(NSString *)userId{
+-(void) registToken:(NSString *)token andId:(NSString *)userId andProjectId:(NSString *)projectId andProjectName:(NSString *)projectName{
     _token = token;
     _userId = userId;
+    _projectId = projectId;
+    _projectName = projectName;
     [[AliOSSKit sharedInstance] initOSSClient];
 }
 

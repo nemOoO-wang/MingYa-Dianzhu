@@ -538,13 +538,13 @@
 			path = MainTabbar;
 			sourceTree = "<group>";
 		};
-		BA2862331F983DFE00578837 /* UniVersal */ = {
+		BA2862331F983DFE00578837 /* ChekShop */ = {
 			isa = PBXGroup;
 			children = (
 				BA2862321F983D3800578837 /* MainTabbar */,
 				BA2B91801F9463C300DFBC4F /* Shop Info */,
 			);
-			path = UniVersal;
+			path = ChekShop;
 			sourceTree = "<group>";
 		};
 		BA2862341F983E9400578837 /* Main Project View */ = {
@@ -842,16 +842,15 @@
 			path = MapPickerView;
 			sourceTree = "<group>";
 		};
-		BA5927A51F8CD3E100B5BA8D /* MainScreen */ = {
+		BA5927A51F8CD3E100B5BA8D /* MainScreen(Archived) */ = {
 			isa = PBXGroup;
 			children = (
 				BAB8D5521F8CA4D90029B6FA /* Map */,
 				BAB8D5561F8CA53B0029B6FA /* Project */,
 				BA7EFE3F1F9753F9005F02BF /* Message View */,
-				BA2862331F983DFE00578837 /* UniVersal */,
 				BA66B7211FF4CFF100485830 /* Archives */,
 			);
-			path = MainScreen;
+			path = "MainScreen(Archived)";
 			sourceTree = "<group>";
 		};
 		BA5927A91F8CD98C00B5BA8D /* NMTextField */ = {
@@ -1090,7 +1089,8 @@
 			isa = PBXGroup;
 			children = (
 				BA2B919A1F949BA600DFBC4F /* Log In */,
-				BA5927A51F8CD3E100B5BA8D /* MainScreen */,
+				BA2862331F983DFE00578837 /* ChekShop */,
+				BA5927A51F8CD3E100B5BA8D /* MainScreen(Archived) */,
 			);
 			path = entrance;
 			sourceTree = "<group>";
@@ -1776,7 +1776,7 @@
 				INFOPLIST_FILE = "MingYa/Supporting Files/Profiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jyt.mingyaPPF;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jyt.mingyaDZ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1794,7 +1794,7 @@
 				INFOPLIST_FILE = "MingYa/Supporting Files/Profiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jyt.mingyaPPF;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jyt.mingyaDZ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

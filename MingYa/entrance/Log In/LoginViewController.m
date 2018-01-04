@@ -7,10 +7,11 @@
 //
 
 #import "LoginViewController.h"
-#import "NMTextField.h"
 #import "MD5Utils.h"
-#import "BeeNet.h"
 #import "MYUser.h"
+
+#import "ShopInfoTabVC.h"
+#import "NMTextField.h"
 #import <JPUSHService.h>
 #import <SVProgressHUD.h>
 
@@ -40,15 +41,19 @@
     [SVProgressHUD show];
     NSString *pswMD5Str = [MD5Utils md5WithString:self.pswTextField.text];
     NSDictionary *paramDict = @{ @"pwd": pswMD5Str,
-                                 @"tel": self.accountTextField.text };
+                                 @"loginaccount": self.accountTextField.text };
     
-    [[BeeNet sharedInstance] requestWithType:Request_POST andUrl:@"branda/login" andParam:paramDict andHeader:nil andSuccess:^(id data) {
+    [[BeeNet sharedInstance] requestWithType:Request_POST andUrl:@"keeper/login" andParam:paramDict andHeader:nil andSuccess:^(id data) {
         // success
         NSDictionary *tmpDic = data[@"data"];
         if ([tmpDic isKindOfClass:[NSDictionary class]] && [tmpDic count] > 0) {
+            
             NSString *tokenStr = ((NSDictionary *)data[@"data"])[@"token"];
-            NSString *idStr = ((NSDictionary *)data[@"data"])[@"brandId"];
-            [[MYUser defaultUser] registToken:tokenStr andId:idStr];
+            NSString *idStr = ((NSDictionary *)data[@"data"])[@"shopkeeperId"];
+            NSString *projectId = ((NSDictionary *)data[@"data"])[@"projectId"];
+            NSString *projectName = ((NSDictionary *)data[@"data"])[@"projectName"];
+            
+            [[MYUser defaultUser] registToken:tokenStr andId:idStr andProjectId:projectId andProjectName:projectName];
             
             // save 2 userdefault
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -83,6 +88,7 @@
     }
     return YES;
 }
+
 // start editing
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     CGFloat y = textField.frame.origin.y;
@@ -97,6 +103,7 @@
     }];
     return YES;
 }
+
 // end editing
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField{
     [UIView animateWithDuration:0.5 animations:^{
@@ -149,6 +156,13 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+# pragma mark - prepare4Login
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    UINavigationController *naviVC = [segue destinationViewController];
+    ShopInfoTabVC *vc = [[naviVC viewControllers]firstObject];
+    vc.projectID = [[MYUser defaultUser] projectId];
 }
 
 @end

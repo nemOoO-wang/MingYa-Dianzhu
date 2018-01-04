@@ -47,13 +47,12 @@
                     </view>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="login" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="yD0-lK-SJn"/>
-                        <segue destination="gvv-of-ESX" kind="show" identifier="logged" id="OUi-RU-aDJ"/>
-                        <segue destination="RCy-hC-PMr" kind="show" identifier="notification" id="ReU-PU-q0C"/>
+                        <segue destination="83S-8D-D8o" kind="show" identifier="login" id="TWO-VI-1Uz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzM-To-BH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-129" y="1101"/>
+            <point key="canvasLocation" x="5430" y="-3376"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -67,7 +66,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="137001" borderStyle="roundedRect" placeholder="请输入帐号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="s0Z-X4-2eV" customClass="NMTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="640152307" borderStyle="roundedRect" placeholder="请输入帐号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="s0Z-X4-2eV" customClass="NMTextField">
                                 <rect key="frame" x="48" y="328" width="279" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="textColor"/>
@@ -82,7 +81,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pIx-Hf-sP0" customClass="NMTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="942703062" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pIx-Hf-sP0" customClass="NMTextField">
                                 <rect key="frame" x="48" y="378" width="279" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="textColor"/>
@@ -147,12 +146,12 @@
                         <outlet property="accountTextField" destination="s0Z-X4-2eV" id="6Td-cc-TFG"/>
                         <outlet property="pswTextField" destination="pIx-Hf-sP0" id="8Jm-Xy-Ve1"/>
                         <outlet property="subviewsOffset" destination="VLp-dk-qri" id="1Mf-ct-leJ"/>
-                        <segue destination="gvv-of-ESX" kind="show" identifier="login" id="7cI-DE-KdI"/>
+                        <segue destination="83S-8D-D8o" kind="show" identifier="login" id="q6A-bK-0SH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="-783"/>
+            <point key="canvasLocation" x="5430" y="-2549"/>
         </scene>
         <!--地图-->
         <scene sceneID="0if-4t-tcB">
@@ -465,12 +464,11 @@
                         <outlet property="quitBtn" destination="A6Y-bm-fu3" id="hcx-Ql-OvN"/>
                         <outlet property="roundView" destination="43N-r4-qX5" id="SFk-Z9-fBU"/>
                         <outlet property="showRightOnlyConstraint" destination="eZn-dB-6lh" id="DZ6-ii-MG2"/>
-                        <segue destination="83S-8D-D8o" kind="show" identifier="check project" id="nmG-9d-iPs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bGQ-Nu-Url" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3560.8000000000002" y="-1637.1814092953525"/>
+            <point key="canvasLocation" x="3241" y="-680"/>
         </scene>
         <!--关于我们-->
         <scene sceneID="PWG-se-cj6">
@@ -1040,12 +1038,11 @@
                         <outlet property="showROnly" destination="vel-Pm-tNY" id="1aQ-MB-dqH"/>
                         <outlet property="showRightOnlyC" destination="C0n-Vt-wfU" id="doc-HS-DsI"/>
                         <outlet property="tableView" destination="W7d-0W-kPe" id="cRL-QT-RUz"/>
-                        <segue destination="83S-8D-D8o" kind="show" identifier="check project" id="RNE-1M-qNT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UfH-Fz-fJ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3560.8000000000002" y="-546.47676161919048"/>
+            <point key="canvasLocation" x="2769" y="45"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="8R7-vQ-6Hc">
@@ -1219,12 +1216,11 @@
                         <outlet property="quitKeyboardView" destination="wzU-aT-eSW" id="D79-fc-f4K"/>
                         <outlet property="tableView" destination="dbi-It-o3F" id="Ugs-nQ-XwO"/>
                         <outlet property="textField" destination="uEd-gd-5vC" id="HDz-5n-NIK"/>
-                        <segue destination="83S-8D-D8o" kind="show" identifier="check project" id="6QE-H5-Eg3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R52-Q0-BRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5497" y="-332"/>
+            <point key="canvasLocation" x="3996" y="80"/>
         </scene>
         <!--基本信息-->
         <scene sceneID="p9J-BH-CuE">
@@ -1541,7 +1537,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpi-pB-3QO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7745" y="-2823"/>
+            <point key="canvasLocation" x="13430" y="-4176"/>
         </scene>
         <!--工程查询-->
         <scene sceneID="1cn-DX-5mU">
@@ -2418,7 +2414,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="8894" y="-2823"/>
+            <point key="canvasLocation" x="14578" y="-4176"/>
         </scene>
         <!--Title-->
         <scene sceneID="t8t-vI-B2a">
@@ -2663,7 +2659,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3X-au-fQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9958" y="-2823"/>
+            <point key="canvasLocation" x="15642" y="-4176"/>
         </scene>
         <!--评价回复-->
         <scene sceneID="T1s-2E-pv1">
@@ -2734,7 +2730,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sn2-Rq-BPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11091" y="-2844"/>
+            <point key="canvasLocation" x="16775" y="-4198"/>
         </scene>
         <!--共享资料-->
         <scene sceneID="rHL-Kg-axC">
@@ -4311,7 +4307,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Nb-ln-BS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5497" y="-1137"/>
+            <point key="canvasLocation" x="7286" y="-2957"/>
         </scene>
         <!--店名-->
         <scene sceneID="TiM-rZ-JpU">
@@ -4319,9 +4315,10 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Izr-1m-iCn" customClass="ShopInfoTabVC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="店名" id="ENK-Ov-LNp">
-                        <barButtonItem key="leftBarButtonItem" image="btn_navback" style="done" id="MSL-mo-Ecf">
+                        <barButtonItem key="rightBarButtonItem" title="退出" id="3S8-p1-V90">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                             <connections>
-                                <action selector="clickQuitBtn:" destination="Izr-1m-iCn" id="cZH-j2-Bbo"/>
+                                <action selector="clickQuitBtn:" destination="Izr-1m-iCn" id="cxi-v2-L8W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -4344,7 +4341,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uVB-Kv-jzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6300" y="-1137"/>
+            <point key="canvasLocation" x="8089" y="-2957"/>
         </scene>
         <!--消息-->
         <scene sceneID="X5p-9W-dF8">
@@ -4357,6 +4354,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zIG-WY-UF8">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -4380,11 +4378,11 @@
                         <viewControllerLayoutGuide type="bottom" id="v1c-xc-ylh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eer-Ww-Nve">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PwZ-I1-76R" customClass="NMButton">
-                                <rect key="frame" x="48" y="479" width="279" height="60"/>
+                                <rect key="frame" x="48" y="523" width="279" height="60"/>
                                 <color key="backgroundColor" red="0.25807237630000002" green="0.60891002419999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="zXM-c0-vcJ"/>
@@ -4422,7 +4420,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="x5Q-m3-N6F" customClass="ImageShowCollectionView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="409"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="473"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="DyT-5J-dOt">
                                     <size key="itemSize" width="75" height="63"/>
@@ -6264,7 +6262,6 @@
         <image name="Star" width="22" height="20"/>
         <image name="add" width="44" height="44"/>
         <image name="btn_add" width="47" height="30"/>
-        <image name="btn_navback" width="9" height="17"/>
         <image name="compose" width="32" height="32"/>
         <image name="default_head" width="52" height="52"/>
         <image name="icon_ai" width="145" height="145"/>
@@ -6301,8 +6298,6 @@
         <segue reference="viI-Yp-VDP"/>
         <segue reference="oC4-q4-R2Z"/>
         <segue reference="gO8-VZ-BoL"/>
-        <segue reference="chp-bH-Bt3"/>
-        <segue reference="nmG-9d-iPs"/>
-        <segue reference="7cI-DE-KdI"/>
+        <segue reference="q6A-bK-0SH"/>
     </inferredMetricsTieBreakers>
 </document>

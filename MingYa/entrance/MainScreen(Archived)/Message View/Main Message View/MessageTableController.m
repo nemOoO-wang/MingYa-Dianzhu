@@ -81,40 +81,40 @@ typedef NS_ENUM(NSInteger, NMSelection){
     }
     
     //request
-    NSString *token = [[MYUser defaultUser] token];
-    if (!token) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-# warning token 有可能已经过期
-        token = [defaults objectForKey:@"token"];
-        NSString *userId = [defaults objectForKey:@"userId"];
-        [[MYUser defaultUser] registToken:token andId:userId];
-    }
-    NSDictionary *proParamDic = @{@"token":token, @"method":@"getPorjectSpeedMsgLast", @"page":@0, @"searchValue":@2};
-    
-    NSDateFormatter *timeFm = [[NSDateFormatter alloc] init];
-    [timeFm setDateFormat:@"HH:mm"];
-    NSDateFormatter *dateFm = [[NSDateFormatter alloc] init];
-    [dateFm setDateFormat:@"MM月dd日"];
-    
-    // project
-    [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"getList" andParam:proParamDic andHeader:nil andSuccess:^(id data) {
-        // success
-        NSDictionary *tmpDic = data[@"data"];
-        if ([tmpDic isKindOfClass:[NSDictionary class]]) {
-            
-            NSDate *date = [NSDate dateWithTimeIntervalSince1970:[tmpDic[@"updateDate"] integerValue]/1000.f];
-            NSString *dateStr = [dateFm stringFromDate:date];
-            NSString *timeStr = [timeFm stringFromDate:date];
-            NSString *message = tmpDic[@"projectName"];
-            self.projectMess.text = message;
-            self.projectDate.text = dateStr;
-            self.projectTimeL.text = timeStr;
-        }
-        
-    } andFailed:^(NSString *str) {
-        // fail
-    }];
-    
+//    NSString *token = [[MYUser defaultUser] token];
+//    if (!token) {
+//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//# warning token 有可能已经过期
+//        token = [defaults objectForKey:@"token"];
+//        NSString *userId = [defaults objectForKey:@"userId"];
+//        [[MYUser defaultUser] registToken:token andId:userId];
+//    }
+//    NSDictionary *proParamDic = @{@"token":token, @"method":@"getPorjectSpeedMsgLast", @"page":@0, @"searchValue":@2};
+//
+//    NSDateFormatter *timeFm = [[NSDateFormatter alloc] init];
+//    [timeFm setDateFormat:@"HH:mm"];
+//    NSDateFormatter *dateFm = [[NSDateFormatter alloc] init];
+//    [dateFm setDateFormat:@"MM月dd日"];
+//
+//    // project
+//    [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"getList" andParam:proParamDic andHeader:nil andSuccess:^(id data) {
+//        // success
+//        NSDictionary *tmpDic = data[@"data"];
+//        if ([tmpDic isKindOfClass:[NSDictionary class]]) {
+//
+//            NSDate *date = [NSDate dateWithTimeIntervalSince1970:[tmpDic[@"updateDate"] integerValue]/1000.f];
+//            NSString *dateStr = [dateFm stringFromDate:date];
+//            NSString *timeStr = [timeFm stringFromDate:date];
+//            NSString *message = tmpDic[@"projectName"];
+//            self.projectMess.text = message;
+//            self.projectDate.text = dateStr;
+//            self.projectTimeL.text = timeStr;
+//        }
+//
+//    } andFailed:^(NSString *str) {
+//        // fail
+//    }];
+//
 }
 
 - (void)didReceiveMemoryWarning {

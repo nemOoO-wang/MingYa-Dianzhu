@@ -11,9 +11,9 @@
 
 
 // 云端
-//#define BASE_URL @"http://119.23.66.37:8080/mingya/mingya/"
+#define BASE_URL @"http://119.23.66.37:8080/mingya/mingya/"
 // 本地
-#define BASE_URL @"http://192.168.3.44:8080/mingya/"
+//#define BASE_URL @"http://192.168.3.44:8080/mingya/"
 
 //#define BASE_URL @"http://http://119.23.66.37/babymc/admin"
 //#define BASE_URL @"http://192.168.3.16/babymc"
