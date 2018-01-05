@@ -35,6 +35,7 @@
 		BA2B91981F949AFF00DFBC4F /* ShopInfoTabVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2B91971F949AFF00DFBC4F /* ShopInfoTabVC.m */; };
 		BA2F1E721FD7EDA80033A2FC /* RoundImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2F1E711FD7EDA80033A2FC /* RoundImgView.m */; };
 		BA2F1E761FD7EF6C0033A2FC /* WorkersTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2F1E751FD7EF6C0033A2FC /* WorkersTableCell.m */; };
+		BA3897241FFF6FB7002BF67C /* NMStarBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3897231FFF6FB7002BF67C /* NMStarBtn.m */; };
 		BA3B1B201FCE538600A410A4 /* NMRoundLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3B1B1F1FCE538600A410A4 /* NMRoundLabel.m */; };
 		BA45CB7E1F9DC7130085012E /* WorkerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA45CB7D1F9DC7130085012E /* WorkerViewController.m */; };
 		BA4833891FBD685100CF6053 /* MYProject.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4833881FBD685000CF6053 /* MYProject.m */; };
@@ -184,6 +185,8 @@
 		BA2F1E711FD7EDA80033A2FC /* RoundImgView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundImgView.m; sourceTree = "<group>"; };
 		BA2F1E741FD7EF6C0033A2FC /* WorkersTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkersTableCell.h; sourceTree = "<group>"; };
 		BA2F1E751FD7EF6C0033A2FC /* WorkersTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkersTableCell.m; sourceTree = "<group>"; };
+		BA3897221FFF6FB7002BF67C /* NMStarBtn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NMStarBtn.h; sourceTree = "<group>"; };
+		BA3897231FFF6FB7002BF67C /* NMStarBtn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NMStarBtn.m; sourceTree = "<group>"; };
 		BA3B1B1E1FCE538600A410A4 /* NMRoundLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NMRoundLabel.h; sourceTree = "<group>"; };
 		BA3B1B1F1FCE538600A410A4 /* NMRoundLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NMRoundLabel.m; sourceTree = "<group>"; };
 		BA45CB7C1F9DC7130085012E /* WorkerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkerViewController.h; sourceTree = "<group>"; };
@@ -998,6 +1001,8 @@
 			children = (
 				BA8CB9CE1FF790DC00F90F3B /* UpNewCommentController.h */,
 				BA8CB9CF1FF790DC00F90F3B /* UpNewCommentController.m */,
+				BA3897221FFF6FB7002BF67C /* NMStarBtn.h */,
+				BA3897231FFF6FB7002BF67C /* NMStarBtn.m */,
 			);
 			path = "New Comment";
 			sourceTree = "<group>";
@@ -1478,8 +1483,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MingYa/Pods-MingYa-resources.sh",
 				"${PODS_ROOT}/AMap3DMap/MAMapKit.framework/AMap.bundle",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				$PODS_CONFIGURATION_BUILD_DIR/QBImagePickerController/QBImagePicker.bundle,
+				"$PODS_CONFIGURATION_BUILD_DIR/QBImagePickerController/QBImagePicker.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -1582,6 +1588,7 @@
 				D8A0B2CC1FF3D3AC00BE676B /* APPIntroItemCell.m in Sources */,
 				BAD127351F9F339800852349 /* NMShop.m in Sources */,
 				BADC23EE1FC8021C00A11DC6 /* MYProjectFlowNames.m in Sources */,
+				BA3897241FFF6FB7002BF67C /* NMStarBtn.m in Sources */,
 				BA03CBFB1FC438D100DE30B3 /* ShopInfoSuperTableViewController.m in Sources */,
 				BA0629F21F94C89C00D97692 /* QuitKeyboardView.m in Sources */,
 				BADBC99C1F97416E009F0F8A /* SearchTableCell.m in Sources */,

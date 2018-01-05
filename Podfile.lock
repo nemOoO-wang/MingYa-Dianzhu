@@ -18,6 +18,7 @@ PODS:
   - AMap3DMap (5.6.0):
     - AMapFoundation (~> 1.4)
   - AMapFoundation (1.4.2)
+  - IQKeyboardManager (5.0.7)
   - JCore (1.1.6)
   - JPush (3.0.7):
     - JCore (~> 1.1.6)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - AFNetworking
   - AliyunOSSiOS
   - AMap3DMap
+  - IQKeyboardManager
   - JPush
   - Masonry
   - MJRefresh
@@ -45,6 +47,7 @@ SPEC CHECKSUMS:
   AliyunOSSiOS: e4668b7b2674da6c0aba1c8c09de7df879817407
   AMap3DMap: 2ac4f9ad7f2f8b015013d8d282c55882bcd68dc9
   AMapFoundation: 6c0471c9a6a0ad17dad46e3d800ad56ca170f82a
+  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
   JCore: 18fc8725124f26e55625eaf224659b3a999dcf63
   JPush: 111b79b8a0169ab8fd4c486dac3ed166ed69293e
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -53,6 +56,6 @@ SPEC CHECKSUMS:
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
 
-PODFILE CHECKSUM: dd48633a6a579825f0701535cf2e4003bee20ea1
+PODFILE CHECKSUM: d022802a0d04eb604fafce3d3677871388713f16
 
 COCOAPODS: 1.3.1

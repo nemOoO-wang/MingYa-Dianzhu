@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <SVProgressHUD.h>
+#import <IQKeyboardManager.h>
 #import "MessageTableController.h"
 // 引入JPush功能所需头文件
 #import "JPUSHService.h"
@@ -41,6 +42,9 @@
     [AMapServices sharedServices].apiKey = @"8b0fb2109df0234a80af6f9c20f6d0ee";
     [AMapServices sharedServices].enableHTTPS = YES;
     
+    // IQKeyBoard
+    [[IQKeyboardManager sharedManager] setEnable:YES];
+        
     // SVProgressHUD
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];

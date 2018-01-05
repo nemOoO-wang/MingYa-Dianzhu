@@ -54,6 +54,7 @@
     if (!_itemArr) {
         NSString *path = [[NSBundle mainBundle] pathForResource:@"Shop" ofType:@"plist"];
         NSArray *originArr = [NSArray arrayWithContentsOfFile:path];
+        
         NSMutableArray *tmpMutArr = [[NSMutableArray alloc] init];
         for (NSDictionary *dict in originArr) {
             NMShop *shop = [NMShop shopWithDict:dict];
@@ -155,10 +156,12 @@
             break;
             
         case 2:
+            // phone only
             cell.phontNumText = self.projectDict[key4projectDic];
             break;
             
         case 3:
+            // name & phone
             cell.rightText = self.projectDict[key4projectDic[0]];
             cell.phontNumText = self.projectDict[key4projectDic[1]];
             break;

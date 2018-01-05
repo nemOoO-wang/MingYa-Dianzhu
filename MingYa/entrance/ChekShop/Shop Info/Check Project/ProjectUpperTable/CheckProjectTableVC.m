@@ -373,6 +373,11 @@
         controller.finishDate = finishDate;
         controller.detailId = detailId;
         controller.sectionName = sectionName;
+        
+        // 「店主确认中」蓝条
+        if ([sectionName isEqualToString: @"店主确认中"] && self.speedCode > speedCode) {
+            controller.shouldShowBanner = YES;
+        }
                 
     }else if([segue.identifier isEqualToString:@"checkWorking"]){
         // 施工(中、完毕)、所有材料已打包、测量完毕

@@ -15,5 +15,6 @@ pod 'AFNetworking'
 pod 'MJRefresh'
 pod 'AliyunOSSiOS'
 pod 'JPush'
+pod 'IQKeyboardManager'
 
 end

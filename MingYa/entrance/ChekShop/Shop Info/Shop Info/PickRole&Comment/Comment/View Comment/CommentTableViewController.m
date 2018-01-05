@@ -12,6 +12,7 @@
 #import "BeeNet.h"
 #import "MYUser.h"
 #import "MYComment.h"
+#import "UpNewCommentController.h"
 
 
 @interface CommentTableViewController ()
@@ -108,25 +109,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    // refresh
     NSString *token = [[MYUser defaultUser] token];
+    
     NSDictionary *paramDic = @{@"token":token , @"projectId":self.projectId, @"evaltype":[NSNumber numberWithInteger:self.role]};
     [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"getEval" andParam:paramDic andHeader:nil andSuccess:^(id data) {
         // success
-            NSArray *tmpArr = [data[@"data"] allObjects];
-            if ([tmpArr count] != 0) {
-                NSDictionary *commentDict = data[@"data"];
-                self.starNum = [commentDict[@"star"] intValue];
-                [self initCommentArrayWithDict:commentDict];
-                [self.tableView reloadData];
-            }else{
-                [SVProgressHUD showErrorWithStatus:@"未填写评价内容"];
-                [self fakeComment];
-            }
+        NSArray *tmpArr = [data[@"data"] allObjects];
+        if ([tmpArr count] > 1) {
+            NSDictionary *commentDict = data[@"data"];
+            self.starNum = [commentDict[@"star"] intValue];
+            [self initCommentArrayWithDict:commentDict];
+            [self.tableView reloadData];
+        }else{
+            [SVProgressHUD showErrorWithStatus:@"未填写评价内容"];
+            [self fakeComment];
+        }
     } andFailed:^(NSString *str) {
         NSLog(@"%@",str);
     }];
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -192,6 +199,13 @@
 // row number
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.commentArr.count + 1;
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    UpNewCommentController *controller = [segue destinationViewController];
+    controller.role = self.role;
+    controller.projectId = self.projectId;
 }
 
 

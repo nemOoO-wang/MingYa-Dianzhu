@@ -2679,7 +2679,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="149" id="3UW-1w-RTh"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <userDefinedRuntimeAttributes>
@@ -2713,12 +2712,97 @@
                                     <action selector="upLoadComment:" destination="AhY-uh-Sav" eventType="touchUpInside" id="4on-mq-1La"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxb-gc-seu">
+                                <rect key="frame" x="0.0" y="159" width="375" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请给出评价星数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGe-r1-Dfg">
+                                        <rect key="frame" x="20" y="17.5" width="93" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ga4-PZ-z6V" customClass="NMStarBtn">
+                                        <rect key="frame" x="333" y="14" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="6U1-ll-3h9"/>
+                                            <constraint firstAttribute="height" constant="22" id="JV4-53-j61"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Star"/>
+                                        <connections>
+                                            <action selector="clickStar:" destination="AhY-uh-Sav" eventType="touchUpInside" id="v4n-Vn-z0Q"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNU-sZ-1eK" customClass="NMStarBtn">
+                                        <rect key="frame" x="306" y="14" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="KR6-CZ-s2L"/>
+                                            <constraint firstAttribute="height" constant="22" id="qem-Qz-5Zi"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Star"/>
+                                        <connections>
+                                            <action selector="clickStar:" destination="AhY-uh-Sav" eventType="touchUpInside" id="ZOq-uW-DVU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STk-w8-qhX" customClass="NMStarBtn">
+                                        <rect key="frame" x="279" y="14" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="ncf-JW-IN5"/>
+                                            <constraint firstAttribute="height" constant="22" id="nxR-Sy-vF8"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Star"/>
+                                        <connections>
+                                            <action selector="clickStar:" destination="AhY-uh-Sav" eventType="touchUpInside" id="ft6-3P-z1u"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMg-FG-k12" customClass="NMStarBtn">
+                                        <rect key="frame" x="252" y="14" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="Gh0-rs-7ja"/>
+                                            <constraint firstAttribute="height" constant="22" id="Yz1-a9-LrW"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Star"/>
+                                        <connections>
+                                            <action selector="clickStar:" destination="AhY-uh-Sav" eventType="touchUpInside" id="wfa-U4-FRL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xR9-1h-cAZ" customClass="NMStarBtn">
+                                        <rect key="frame" x="225" y="14" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="ZdS-2e-mmQ"/>
+                                            <constraint firstAttribute="width" constant="22" id="mct-1T-Gdt"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Star"/>
+                                        <connections>
+                                            <action selector="clickStar:" destination="AhY-uh-Sav" eventType="touchUpInside" id="eC4-jT-z30"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="7ry-xJ-1ug"/>
+                                    <constraint firstItem="HNU-sZ-1eK" firstAttribute="leading" secondItem="STk-w8-qhX" secondAttribute="trailing" constant="5" id="A0l-uK-rwn"/>
+                                    <constraint firstItem="HNU-sZ-1eK" firstAttribute="centerY" secondItem="xR9-1h-cAZ" secondAttribute="centerY" id="GbE-KI-Yj6"/>
+                                    <constraint firstItem="STk-w8-qhX" firstAttribute="leading" secondItem="LMg-FG-k12" secondAttribute="trailing" constant="5" id="HM7-l3-Lp9"/>
+                                    <constraint firstItem="nGe-r1-Dfg" firstAttribute="leading" secondItem="dxb-gc-seu" secondAttribute="leading" constant="20" id="S5k-Q2-DqQ"/>
+                                    <constraint firstItem="nGe-r1-Dfg" firstAttribute="centerY" secondItem="dxb-gc-seu" secondAttribute="centerY" id="VEP-HU-60o"/>
+                                    <constraint firstItem="LMg-FG-k12" firstAttribute="centerY" secondItem="xR9-1h-cAZ" secondAttribute="centerY" id="Wb2-eu-usS"/>
+                                    <constraint firstItem="STk-w8-qhX" firstAttribute="centerY" secondItem="xR9-1h-cAZ" secondAttribute="centerY" id="WkH-4e-iUq"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ga4-PZ-z6V" secondAttribute="trailing" constant="20" id="Zx1-38-ewb"/>
+                                    <constraint firstItem="Ga4-PZ-z6V" firstAttribute="leading" secondItem="HNU-sZ-1eK" secondAttribute="trailing" constant="5" id="bij-uC-HIZ"/>
+                                    <constraint firstItem="Ga4-PZ-z6V" firstAttribute="centerY" secondItem="xR9-1h-cAZ" secondAttribute="centerY" id="lR2-pI-nce"/>
+                                    <constraint firstItem="Ga4-PZ-z6V" firstAttribute="centerY" secondItem="dxb-gc-seu" secondAttribute="centerY" id="o46-dk-OH6"/>
+                                    <constraint firstItem="LMg-FG-k12" firstAttribute="leading" secondItem="xR9-1h-cAZ" secondAttribute="trailing" constant="5" id="yG0-pZ-Jb1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dxb-gc-seu" secondAttribute="trailing" id="K2h-O5-9rA"/>
                             <constraint firstItem="MpE-ts-yma" firstAttribute="top" secondItem="de0-4N-mtz" secondAttribute="bottom" id="WUT-h0-sow"/>
                             <constraint firstItem="MpE-ts-yma" firstAttribute="leading" secondItem="fYX-sY-D3e" secondAttribute="leading" id="gpr-MJ-PD3"/>
                             <constraint firstAttribute="trailing" secondItem="MpE-ts-yma" secondAttribute="trailing" id="nTx-8t-axL"/>
+                            <constraint firstItem="dxb-gc-seu" firstAttribute="leading" secondItem="fYX-sY-D3e" secondAttribute="leading" id="oVc-ao-jg9"/>
+                            <constraint firstItem="dxb-gc-seu" firstAttribute="top" secondItem="MpE-ts-yma" secondAttribute="bottom" constant="10" id="sGE-kA-c0V"/>
                             <constraint firstItem="CQo-K0-84c" firstAttribute="centerX" secondItem="fYX-sY-D3e" secondAttribute="centerX" id="wOT-0f-QF2"/>
                             <constraint firstItem="CQo-K0-84c" firstAttribute="leading" secondItem="fYX-sY-D3e" secondAttribute="leading" constant="48" id="yGT-KC-0mq"/>
                             <constraint firstItem="Brw-kj-UvA" firstAttribute="top" secondItem="CQo-K0-84c" secondAttribute="bottom" constant="20" id="yjp-7S-Fbz"/>
@@ -2726,6 +2810,11 @@
                     </view>
                     <connections>
                         <outlet property="commentTextVie" destination="MpE-ts-yma" id="4tL-sZ-qCG"/>
+                        <outlet property="starBtn" destination="Ga4-PZ-z6V" id="LzR-en-86j"/>
+                        <outlet property="starBtn2" destination="HNU-sZ-1eK" id="UJD-jE-izR"/>
+                        <outlet property="starBtn3" destination="STk-w8-qhX" id="tHH-tq-MLb"/>
+                        <outlet property="starBtn4" destination="LMg-FG-k12" id="yws-Am-l30"/>
+                        <outlet property="starBtn5" destination="xR9-1h-cAZ" id="zA6-1M-nnm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sn2-Rq-BPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
