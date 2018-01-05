@@ -35,7 +35,10 @@
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
     
     // AMap
-    [AMapServices sharedServices].apiKey = @"58e40091cf0aed6bc583c4feca1293ca";
+    // 聚义堂测试帐号
+    //    [AMapServices sharedServices].apiKey = @"58e40091cf0aed6bc583c4feca1293ca";
+    // 铭雅提供帐号
+    [AMapServices sharedServices].apiKey = @"8b0fb2109df0234a80af6f9c20f6d0ee";
     [AMapServices sharedServices].enableHTTPS = YES;
     
     // SVProgressHUD
