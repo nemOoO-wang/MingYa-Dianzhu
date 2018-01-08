@@ -18,6 +18,7 @@
 #import "UIColor+BeeColor.h"
 #import "BeeNet.h"
 #import "NMButton.h"
+#import "MYUser.h"
 
 #import <SVProgressHUD.h>
 

@@ -7,36 +7,77 @@
 //
 
 #import "PickRoleViewController.h"
-#import "CommentTableViewController.h"
+#import "UpNewCommentController.h"
 
 @interface PickRoleViewController ()
 
+@property (nonatomic,strong) NSArray *finishArr;
+
 @end
+
+
 
 @implementation PickRoleViewController
 - (IBAction)clickXiangMu:(id)sender {
-    [self performSegueWithIdentifier:@"view comment" sender:@{@"row":@1,@"title":@"项目经理"}];
+    if ([self.finishArr[0] integerValue] == 1) {
+        [self performSegueWithIdentifier:@"view comment" sender:@{@"row":@1,@"title":@"项目经理"}];
+    }else{
+        [self performSegueWithIdentifier:@"reply" sender:@{@"row":@1,@"title":@"项目经理"}];
+    }
 }
 - (IBAction)clickSheJi:(id)sender {
+    if ([self.finishArr[1] integerValue] == 1) {
     [self performSegueWithIdentifier:@"view comment" sender:@{@"row":@2,@"title":@"设计师"}];
+    }else{
+        [self performSegueWithIdentifier:@"reply" sender:@{@"row":@2,@"title":@"设计师"}];
+    }
 }
 - (IBAction)clickYuSuan:(id)sender {
+    if ([self.finishArr[2] integerValue] == 1) {
     [self performSegueWithIdentifier:@"view comment" sender:@{@"row":@3,@"title":@"预算员"}];
+    }else{
+        [self performSegueWithIdentifier:@"reply" sender:@{@"row":@3,@"title":@"预算员"}];
+    }
 }
 - (IBAction)clickCeLiang:(id)sender {
+    if ([self.finishArr[3] integerValue] == 1) {
     [self performSegueWithIdentifier:@"view comment" sender:@{@"row":@4,@"title":@"测量人员"}];
+    }else{
+        [self performSegueWithIdentifier:@"reply" sender:@{@"row":@4,@"title":@"测量人员"}];
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    CommentTableViewController *controller = [segue destinationViewController];
-    controller.role = [[sender objectForKey:@"row"] integerValue];
-    controller.title = [sender objectForKey:@"title"];
-    controller.projectId = self.projectId;
+    if ([segue.identifier isEqualToString:@"view comment"]) {
+        CommentTableViewController *controller = [segue destinationViewController];
+        NSInteger row = [[sender objectForKey:@"row"] integerValue];
+        controller.role = row;
+        controller.title = [sender objectForKey:@"title"];
+        controller.projectId = self.projectId;
+    }else if ([segue.identifier isEqualToString:@"reply"]){
+        UpNewCommentController *controller = segue.destinationViewController;
+        controller.role = [[sender objectForKey:@"row"] integerValue];
+        controller.title = [sender objectForKey:@"title"];
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    NSString *token = [[MYUser defaultUser] token];
+    NSString *proId = [[MYUser defaultUser] projectId];
+    NSDictionary *paramDic = @{@"token":token, @"method":@"getKEvalIsFinish", @"page":@0, @"searchValue":proId};
+    [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"getList" andParam:paramDic andHeader:nil andSuccess:^(id data) {
+        //
+        self.finishArr = data[@"data"];
+        
+    } andFailed:^(NSString *str) {
+        NSLog(@"%@",str);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

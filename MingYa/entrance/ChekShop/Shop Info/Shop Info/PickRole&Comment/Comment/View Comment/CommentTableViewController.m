@@ -32,7 +32,6 @@
 -(void)setProjectId:(NSString *)projectId{
     _projectId = projectId;
     // request
-    // request
 //    NSString *token = [[MYUser defaultUser] token];
 //    NSString *userId = [[MYUser defaultUser] userId];
 //    NSDictionary *paramDict = @{ @"token":token, @"method": @"getEvalForInline", @"page": @0, @"keyWord": userId, @"searchValue": projectId};
@@ -86,6 +85,12 @@
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
         aComment.time = [formatter stringFromDate:date];
         [tmpArr addObject:aComment];
+    }else{
+        MYComment *bComment = [[MYComment alloc] init];
+        bComment.commentText = @"未填写";
+        bComment.time = @"未进行";
+        bComment.titleStr = @"客服评价回复";
+        [tmpArr addObject:bComment];
     }
     // 品牌方评价
     if (dict[@"timeb"]) {
@@ -101,6 +106,12 @@
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
         aComment.time = [formatter stringFromDate:date];
         [tmpArr addObject:aComment];
+    }else{
+        MYComment *cComment = [[MYComment alloc] init];
+        cComment.commentText = @"未填写";
+        cComment.time = @"未进行";
+        cComment.titleStr = @"品牌方评价回复";
+        [tmpArr addObject:cComment];
     }
     
     self.commentArr = [tmpArr copy];
@@ -114,23 +125,29 @@
 -(void)viewWillAppear:(BOOL)animated{
     // refresh
     NSString *token = [[MYUser defaultUser] token];
+    NSString *projectId = [[MYUser defaultUser] projectId];
     
-    NSDictionary *paramDic = @{@"token":token , @"projectId":self.projectId, @"evaltype":[NSNumber numberWithInteger:self.role]};
-    [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"getEval" andParam:paramDic andHeader:nil andSuccess:^(id data) {
-        // success
-        NSArray *tmpArr = [data[@"data"] allObjects];
-        if ([tmpArr count] > 1) {
-            NSDictionary *commentDict = data[@"data"];
-            self.starNum = [commentDict[@"star"] intValue];
-            [self initCommentArrayWithDict:commentDict];
-            [self.tableView reloadData];
-        }else{
-            [SVProgressHUD showErrorWithStatus:@"未填写评价内容"];
-            [self fakeComment];
-        }
-    } andFailed:^(NSString *str) {
-        NSLog(@"%@",str);
-    }];
+    [SVProgressHUD show];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSDictionary *paramDic = @{@"token":token , @"projectId":projectId, @"evaltype":[NSNumber numberWithInteger:self.role]};
+        [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"getEval" andParam:paramDic andHeader:nil andSuccess:^(id data) {
+            // success
+            NSArray *tmpArr = [data[@"data"] allObjects];
+            if ([tmpArr count] > 1) {
+                NSDictionary *commentDict = data[@"data"];
+                self.starNum = [commentDict[@"star"] intValue];
+                [self initCommentArrayWithDict:commentDict];
+                [self.tableView reloadData];
+            }else{
+                [SVProgressHUD showErrorWithStatus:@"未填写评价内容"];
+                [self fakeComment];
+            }
+            [SVProgressHUD dismiss];
+        } andFailed:^(NSString *str) {
+            NSLog(@"%@",str);
+            [SVProgressHUD dismiss];
+        }];
+    });
     
 }
 

@@ -12,5 +12,6 @@
 
 @property (nonatomic,strong) NSString *projectId;
 @property (nonatomic,assign) NSInteger role;
+@property (nonatomic,strong) NSString *title;
 
 @end

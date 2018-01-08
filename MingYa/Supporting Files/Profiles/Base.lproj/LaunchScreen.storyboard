@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,40 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="se4-H4-LaS">
-                                <rect key="frame" x="115" y="112" width="145" height="145"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="145" id="j8h-GD-Y5Q"/>
-                                    <constraint firstAttribute="width" secondItem="se4-H4-LaS" secondAttribute="height" multiplier="1:1" id="qQn-kH-2BP"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="sdB-hc-H0K">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mofang" translatesAutoresizingMaskIntoConstraints="NO" id="Mkq-RH-JeO">
-                                <rect key="frame" x="50" y="433" width="275" height="234"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="铭雅装修" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S78-aO-8Kt">
-                                <rect key="frame" x="135.5" y="267" width="105.5" height="31.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="连 锁 店 面 陈 列 专 家" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhX-uL-5Gl">
-                                <rect key="frame" x="103" y="318.5" width="169.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Mkq-RH-JeO" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="50" id="5yf-NN-G9R"/>
-                            <constraint firstItem="S78-aO-8Kt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MHG-aR-Cv7"/>
-                            <constraint firstItem="S78-aO-8Kt" firstAttribute="top" secondItem="se4-H4-LaS" secondAttribute="bottom" constant="10" id="YNi-cP-bqT"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Mkq-RH-JeO" secondAttribute="bottom" id="Zkn-lv-CVF"/>
-                            <constraint firstItem="GhX-uL-5Gl" firstAttribute="top" secondItem="S78-aO-8Kt" secondAttribute="bottom" constant="20" id="aRY-h4-tV7"/>
-                            <constraint firstItem="se4-H4-LaS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hLs-it-h6W"/>
-                            <constraint firstItem="Mkq-RH-JeO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kUo-qm-ch4"/>
-                            <constraint firstItem="GhX-uL-5Gl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rGo-Ys-UdH"/>
-                            <constraint firstItem="se4-H4-LaS" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="92" id="rmv-k1-fGw"/>
+                            <constraint firstAttribute="trailing" secondItem="sdB-hc-H0K" secondAttribute="trailing" id="038-6g-GgP"/>
+                            <constraint firstItem="sdB-hc-H0K" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="0he-to-rQJ"/>
+                            <constraint firstItem="sdB-hc-H0K" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Wtl-Uv-UO9"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="sdB-hc-H0K" secondAttribute="bottom" id="tuE-1h-Vi6"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -65,7 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="132" height="132"/>
-        <image name="mofang" width="296" height="234"/>
+        <image name="welcome" width="1080" height="1920"/>
     </resources>
 </document>

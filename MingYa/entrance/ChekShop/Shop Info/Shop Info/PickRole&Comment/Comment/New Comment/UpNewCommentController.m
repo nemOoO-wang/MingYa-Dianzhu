@@ -7,6 +7,8 @@
 //
 
 #import "UpNewCommentController.h"
+#import "CommentTableViewController.h"
+#import "PickRoleViewController.h"
 #import "MYUser.h"
 #import "NMTextView.h"
 #import "NMStarBtn.h"
@@ -35,11 +37,21 @@
         // succes
         [SVProgressHUD showSuccessWithStatus:@"上传成功"];
         
+        // 返回到看的界面
+        NSMutableArray *conArr = [self.navigationController.viewControllers mutableCopy];
+        // new con
+        CommentTableViewController *newCon = [self.storyboard instantiateViewControllerWithIdentifier:@"CommentTable"];
+        newCon.title = self.title;
+        PickRoleViewController *pickCon = conArr[conArr.count-2];
+        pickCon.tmpCommentTableVC = newCon;
+        [conArr insertObject:newCon atIndex:conArr.count-1];
+        [self.navigationController setViewControllers:[conArr copy]];
         [self.navigationController popViewControllerAnimated:YES];
         
     } andFailed:^(NSString *str) {
         NSLog(@"%@",str);
     }];
+    
 }
 
 - (void)viewDidLoad {

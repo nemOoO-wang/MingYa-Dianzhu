@@ -24,24 +24,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="JUP-Qm-0YT">
-                                <rect key="frame" x="115" y="112" width="145" height="145"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="JUP-Qm-0YT" secondAttribute="height" multiplier="1:1" id="uDD-7l-k2m"/>
-                                    <constraint firstAttribute="height" constant="145" id="zXj-5T-v77"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome" translatesAutoresizingMaskIntoConstraints="NO" id="aSP-lE-5cQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-Hi-da8">
-                                <rect key="frame" x="169" y="297" width="37" height="37"/>
-                                <color key="color" red="0.58039215690000001" green="0.58039215690000001" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="169" y="362" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JUP-Qm-0YT" firstAttribute="top" secondItem="aRn-GB-w2A" secondAttribute="top" constant="112" id="E1A-jn-gF4"/>
-                            <constraint firstItem="JUP-Qm-0YT" firstAttribute="centerX" secondItem="aRn-GB-w2A" secondAttribute="centerX" id="JY8-P5-s7L"/>
-                            <constraint firstItem="GVb-Hi-da8" firstAttribute="top" secondItem="JUP-Qm-0YT" secondAttribute="bottom" constant="40" id="OkL-ef-sDs"/>
-                            <constraint firstItem="JUP-Qm-0YT" firstAttribute="width" secondItem="JUP-Qm-0YT" secondAttribute="height" multiplier="1:1" id="dtJ-vF-b47"/>
+                            <constraint firstItem="GVb-Hi-da8" firstAttribute="centerY" secondItem="aRn-GB-w2A" secondAttribute="centerY" constant="47" id="PpY-4x-yPn"/>
+                            <constraint firstItem="aSP-lE-5cQ" firstAttribute="leading" secondItem="aRn-GB-w2A" secondAttribute="leading" id="blf-ji-kFI"/>
+                            <constraint firstAttribute="trailing" secondItem="aSP-lE-5cQ" secondAttribute="trailing" id="hGb-8J-vS3"/>
+                            <constraint firstItem="org-hR-ge7" firstAttribute="top" secondItem="aSP-lE-5cQ" secondAttribute="bottom" id="lP7-8e-ugc"/>
+                            <constraint firstItem="aSP-lE-5cQ" firstAttribute="top" secondItem="aRn-GB-w2A" secondAttribute="top" id="m6Y-CM-96B"/>
                             <constraint firstItem="GVb-Hi-da8" firstAttribute="centerX" secondItem="aRn-GB-w2A" secondAttribute="centerX" id="mbQ-Qx-Z7t"/>
                         </constraints>
                     </view>
@@ -2390,6 +2386,7 @@
                     </view>
                     <connections>
                         <segue destination="cd8-Mr-Lhw" kind="show" identifier="view comment" id="r81-rc-zYg"/>
+                        <segue destination="AhY-uh-Sav" kind="show" identifier="reply" id="XgE-rV-GfB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nbq-FH-s9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2419,7 +2416,7 @@
         <!--Title-->
         <scene sceneID="t8t-vI-B2a">
             <objects>
-                <tableViewController id="cd8-Mr-Lhw" customClass="CommentTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CommentTable" id="cd8-Mr-Lhw" customClass="CommentTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YqI-fh-AGf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2639,27 +2636,11 @@
                             <outlet property="delegate" destination="cd8-Mr-Lhw" id="0Ur-22-Eay"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="WR4-1b-X8r">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Qjg-Q4-YVC">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="A7Y-0u-EeW">
-                                <rect key="frame" x="276" y="5" width="83" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="回复">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="AhY-uh-Sav" kind="show" id="bQS-Nc-DQX"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="rePostBtn" destination="Qjg-Q4-YVC" id="RGo-EJ-bTK"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Title" id="WR4-1b-X8r"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r3X-au-fQs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15642" y="-4176"/>
+            <point key="canvasLocation" x="15793" y="-4666"/>
         </scene>
         <!--评价回复-->
         <scene sceneID="T1s-2E-pv1">
@@ -2819,7 +2800,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sn2-Rq-BPE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16775" y="-4198"/>
+            <point key="canvasLocation" x="15793" y="-3686"/>
         </scene>
         <!--共享资料-->
         <scene sceneID="rHL-Kg-axC">
@@ -6382,11 +6363,12 @@
         <image name="tab_jibenxinxi2" width="22" height="25"/>
         <image name="tab_jindu" width="24" height="23"/>
         <image name="tab_jindu2" width="24" height="22"/>
+        <image name="welcome" width="1080" height="1920"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="viI-Yp-VDP"/>
         <segue reference="oC4-q4-R2Z"/>
         <segue reference="gO8-VZ-BoL"/>
-        <segue reference="q6A-bK-0SH"/>
+        <segue reference="TWO-VI-1Uz"/>
     </inferredMetricsTieBreakers>
 </document>

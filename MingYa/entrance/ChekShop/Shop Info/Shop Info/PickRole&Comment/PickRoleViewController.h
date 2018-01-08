@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommentTableViewController.h"
 
 @interface PickRoleViewController : UIViewController
 
 @property (nonatomic,strong) NSString *projectId;
+@property (nonatomic,strong) CommentTableViewController *tmpCommentTableVC;
+
 
 @end
