@@ -9,6 +9,7 @@
 #import "PreLoginViewController.h"
 #import "MYUser.h"
 #import <SVProgressHUD.h>
+#import "ShopInfoTabVC.h"
 
 
 #define LoginIden @"login"
@@ -31,23 +32,21 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults objectForKey:@"token"];
-    NSString *userId = [defaults objectForKey:@"userId"];
-#warning 先不搞自动登录
-    [self performSegueWithIdentifier:LoginIden sender:self];
+    NSString *brandId = [defaults objectForKey:@"brandId"];
+    NSString *projectId = [defaults objectForKey:@"projectId"];
+    NSString *projectName = [defaults objectForKey:@"projectName"];
     
-    [SVProgressHUD dismiss];
-    /*
     // nil token
-    if (token == nil) {
+    if (token == nil || projectId == nil) {
         [self performSegueWithIdentifier:LoginIden sender:self];
         [SVProgressHUD dismiss];
     }else{
         // request test
-        NSDictionary *paramDic = @{@"token":token, @"method":@"getKEvalIsFinish", @"page":@0};
-        [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"getList" andParam:paramDic andHeader:nil andSuccess:^(id data) {
+        NSDictionary *paramDict = @{@"token":token, @"method":@"getAllSpeedDetailById", @"page":@0, @"keyWord":@"",@"searchValue":projectId};
+        [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"/getList" andParam:paramDict andHeader:nil andSuccess:^(id data) {
             // success
             if ([data[@"ret"] boolValue]) {
-                [[MYUser defaultUser] registToken:token andId:userId];
+                [[MYUser defaultUser] registToken:token andId:brandId andProjectId:projectId andProjectName:projectName];
                 [self performSegueWithIdentifier:LoggedIden sender:self];
             }else{
                 [self performSegueWithIdentifier:LoginIden sender:self];
@@ -62,8 +61,17 @@
             [SVProgressHUD showErrorWithStatus:@"通信失败,请登录"];
         }];
         
-    }*/
+    }
 }
+
+
+# pragma mark - prepare4Login
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    UINavigationController *naviVC = [segue destinationViewController];
+    ShopInfoTabVC *vc = [[naviVC viewControllers]firstObject];
+    vc.projectID = [[MYUser defaultUser] projectId];
+}
+
 
 //# pragma mark - show noti VC
 //-(void)shouldShowNotificationViewController{
@@ -101,14 +109,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

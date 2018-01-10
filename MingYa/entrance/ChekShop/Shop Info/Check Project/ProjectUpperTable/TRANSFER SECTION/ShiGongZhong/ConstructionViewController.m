@@ -14,6 +14,7 @@
 #import "MYUser.h"
 #import "ConstructionDatePickerVC.h"
 #import "SGZImgSet.h"
+#import "ImgBrowserViewController.h"
 
 
 @interface ConstructionViewController () <UITableViewDelegate,UITableViewDataSource,ConstructionDatePickerVCDelegate, NormalUpLoadImgViewControllerDelegate>
@@ -82,6 +83,13 @@
             NSMutableArray *colMArr = [[NSMutableArray alloc]init];
             // enum imgs
             for (NSDictionary *imgDic in tmpArr) {
+                
+                // 忽略非图片文件
+                NSString *suffix = imgDic[@"constructionSuffix"];
+                if (![@"jpg jpeg png gif JPG JPEG PNG GIF" containsString:suffix]) {
+                    continue;
+                }
+                
                 NSString *statusStr = [imgDic[@"constructionType"] integerValue]==1? @"施工中":@"施工完毕";
                 if ([statusStr isEqualToString:@"施工完毕"]) {
                     self.showAsSingleCollection = YES;
@@ -128,43 +136,6 @@
             // fail
             NSLog(@"%@",str);
         }];
-//        [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"getList" andParam:paramDic andHeader:nil andSuccess:^(id data) {
-//            // success
-//            NSMutableArray *tmpMutArr = [[NSMutableArray alloc] init];
-//            NSDictionary *tmpDic = data[@"data"];
-//            // title model
-//            NSDateFormatter *df = [[NSDateFormatter alloc] init];
-//            [df setDateFormat:@"yyyy-MM-dd"];
-//#warning 空数据？？？
-//            if (![tmpDic[@"finishTime"] isKindOfClass:[NSNull class]]) {
-//                NSDate *date = [NSDate dateWithTimeIntervalSince1970:[tmpDic[@"finishTime"] integerValue]/1000.f];
-//                TitleAndValueModel *tModel = [TitleAndValueModel modelWithTitle:@"预计完成时间" andValue:[df stringFromDate:date]];
-//                [tmpMutArr addObject:@[tModel]];
-//            }
-//            // imgs model
-//            NSMutableArray *imgMutTmpArr = [[NSMutableArray alloc] init];
-//            NSArray *tmpArr = tmpDic[@"dataList"];
-//            NSLog(@"%@",tmpArr);
-//            for (NSDictionary *imgDic in tmpArr) {
-//                NSString *statusStr = [imgDic[@"constructionType"] integerValue]==1? @"施工中":@"施工完毕";
-//                NSString *personName = imgDic[@"constructionNickName"];
-//                NSDate *upDateate = [NSDate dateWithTimeIntervalSince1970:[tmpDic[@"constructionDate"]integerValue]/1000.f];
-//                NSString *labelText = (NSString *)[NSString stringWithFormat:@"%@\n%@\t%@",statusStr,personName,[df stringFromDate:upDateate]];
-//                // 切割 img url
-//                NSString *imgsPath = imgDic[@"constructionUrl"];
-//                NSArray *strArr = [imgsPath componentsSeparatedByString:@","];
-//                ImgCollectionModel *imgModel = [ImgCollectionModel modelWithTitleStr:labelText andImgDatas:strArr];
-//                [imgMutTmpArr addObject:imgModel];
-//            }
-//            if (imgMutTmpArr) {
-//                [tmpMutArr addObject:imgMutTmpArr];
-//            }
-//            self.checkConstructModelData = [tmpMutArr copy];
-//            [self.tableView reloadData];
-//        } andFailed:^(NSString *str) {
-//            // fail
-//            NSLog(@"%@",str);
-//        }];
     }else if ([self.sectionName isEqualToString:@"施工完毕"]){
         // 施工完毕
         self.showAsSingleCollection = YES;
@@ -345,6 +316,10 @@
     if ([model isKindOfClass:[ImgCollectionModel class]]){
         cell = [tableView dequeueReusableCellWithIdentifier:@"ImgCollectionCell" forIndexPath:indexPath];
         [cell setupWithModel:model];
+        [cell setDidSelectImg:^(NSArray *imgData, NSInteger idx) {
+            ImgBrowserViewController* vc = [ImgBrowserViewController viewControllerWithImgArray:imgData andKeyPath:@"" andStartIdx:idx];
+            [self.navigationController pushViewController:vc animated:YES];
+        }];
     }else if ([model isKindOfClass:[TitleAndValueModel class]]){
         if ([self.sectionName isEqualToString:@"进场施工"]) {
             cell = [tableView dequeueReusableCellWithIdentifier:@"TilteAndValueCell" forIndexPath:indexPath];

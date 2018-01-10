@@ -7,13 +7,20 @@
 //
 
 #import "ImgItemCollectionCell.h"
-#import <SDWebImageDownloader.h>
+#import <UIImageView+WebCache.h>
 
 @implementation ImgItemCollectionCell
 
 -(void)setupWithImgUrl:(NSString *)imgUrl{
-    [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:imgUrl] options:SDWebImageDownloaderProgressiveDownload progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
-        [self.imgView setImage:image];
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:[imgUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        CGSize imgSize = image.size;
+        CGSize cellSize = self.contentView.frame.size;
+        
+        if (imgSize.height / imgSize.width > cellSize.height / cellSize.width) {
+            [self.imgView setContentMode:UIViewContentModeScaleAspectFit];
+        }else{
+            [self.imgView setContentMode:UIViewContentModeScaleAspectFill];
+        }
     }];
 }
 

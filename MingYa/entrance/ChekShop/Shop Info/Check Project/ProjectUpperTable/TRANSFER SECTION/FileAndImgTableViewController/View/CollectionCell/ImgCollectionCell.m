@@ -9,8 +9,6 @@
 #import "ImgCollectionCell.h"
 #import "ImgItemCollectionCell.h"
 
-#import "ImgBrowserViewController.h"
-
 @interface ImgCollectionCell() <UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (strong,nonatomic) NSArray* imgDatas;
@@ -28,7 +26,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
@@ -41,8 +39,7 @@
 
 #pragma mark - UICollectionViewDelegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    ImgBrowserViewController* vc = [ImgBrowserViewController viewControllerWithImgArray:self.imgDatas andKeyPath:@"" andStartIdx:indexPath.item];
-    [self.baseVC.navigationController pushViewController:vc animated:YES];
+    self.didSelectImg(self.imgDatas, indexPath.item);
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -62,7 +59,7 @@
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    float itemWidth = (ScreenWidth - 20) / 3;
+    int itemWidth = (ScreenWidth - 20) / 3.0;
     return CGSizeMake(itemWidth, itemWidth);
 }
 
@@ -78,3 +75,4 @@
     return UIEdgeInsetsMake(0, 5, 0, 5);
 }
 @end
+

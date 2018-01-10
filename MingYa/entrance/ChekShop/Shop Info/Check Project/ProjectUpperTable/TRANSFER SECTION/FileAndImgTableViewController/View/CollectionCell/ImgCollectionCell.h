@@ -10,11 +10,14 @@
 #import "ImgCollectionModel.h"
 
 @interface ImgCollectionCell : UITableViewCell
+
+@property (strong,nonatomic) void(^didSelectImg)(NSArray* imgData,NSInteger idx);
+
+
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 -(void)setupWithModel:(ImgCollectionModel*)model;
 
-@property (strong,nonatomic) UIViewController* baseVC;
 
 @end

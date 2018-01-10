@@ -28,7 +28,6 @@
 
 @implementation AppDelegate
 
-#pragma mark - 设置高德地图 profile
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     // Custom iOS Navi Bar
@@ -51,6 +50,7 @@
     [SVProgressHUD setMinimumDismissTimeInterval:1];
     
     // APNs (JPush required)
+    /*
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
@@ -81,7 +81,8 @@
         self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"APPIntroViewController"];
         [[NSUserDefaults standardUserDefaults] setObject:@YES forKey:@"hasShowAppIntro"];
     }
-    
+    */
+     
     return YES;
 }
 

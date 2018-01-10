@@ -59,12 +59,15 @@
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:tokenStr forKey:@"token"];
             [defaults setObject:idStr forKey:@"brandId"];
+            [defaults setObject:projectId forKey:@"projectId"];
+            [defaults setObject:projectName forKey:@"projectName"];
             [defaults synchronize];
             
+            // 店主没有 jpush
             // set JPush info
-            [JPUSHService setAlias:tokenStr completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
-                NSLog(@"irescode:%ld\nialias:%@\nseq:%ld",(long)iResCode,iAlias,(long)seq);
-            } seq:0];
+//            [JPUSHService setAlias:tokenStr completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+//                NSLog(@"irescode:%ld\nialias:%@\nseq:%ld",(long)iResCode,iAlias,(long)seq);
+//            } seq:0];
             
             // segue
             [self performSegueWithIdentifier:@"login" sender:self];

@@ -43,7 +43,7 @@
                     </view>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="login" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="yD0-lK-SJn"/>
-                        <segue destination="83S-8D-D8o" kind="show" identifier="login" id="TWO-VI-1Uz"/>
+                        <segue destination="83S-8D-D8o" kind="show" identifier="logged" id="TWO-VI-1Uz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzM-To-BH8" userLabel="First Responder" sceneMemberID="firstResponder"/>

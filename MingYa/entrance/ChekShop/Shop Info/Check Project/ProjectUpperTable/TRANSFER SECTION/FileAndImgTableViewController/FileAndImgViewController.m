@@ -15,6 +15,7 @@
 #import "FileItemCell.h"
 #import "ImgCollectionCell.h"
 #import "TilteAndValueCell.h"
+#import "ImgBrowserViewController.h"
 
 
 #define FooterHeight 10
@@ -55,7 +56,7 @@
                     NSString *fileStr = fileDic[@"constructionUrl"];
                     // suffix
                     NSString *suffixStr = fileDic[@"constructionSuffix"];
-                    if ([@"jpg jpeg png gif" containsString:suffixStr]) {
+                    if ([@"jpg jpeg png gif JPG JPEG PNG GIF" containsString:suffixStr]) {
                         // 图片
                         [tmpimgMArr addObject:fileStr];
                     }else{
@@ -83,7 +84,7 @@
                     NSString *fileStr = fileDic[@"contentUrl"];
                     // suffix
                     NSString *suffixStr = fileDic[@"contentSuffix"];
-                    if ([@"jpg jpeg png gif" containsString:suffixStr]) {
+                    if ([@"jpg jpeg png gif JPG JPEG PNG GIF" containsString:suffixStr]) {
                         // 图片
                         [tmpimgMArr addObject:fileStr];
                     }else{
@@ -153,7 +154,7 @@
             self.workerType = tmpDic[@"stationName"];
             // date
             NSDateFormatter *fm = [[NSDateFormatter alloc] init];
-            [fm setDateFormat:@"yyyy.YY.dd HH:mm"];
+            [fm setDateFormat:@"yyyy.MM.dd HH:mm"];
             NSString *timeStr = [fm stringFromDate:self.finishDate];
             // model
             TitleModel *tModel = [TitleModel modelWithTitleAttr:[NSString stringWithFormat:@"上传员工： %@ %@\n上传时间： %@",self.userName,self.workerType, timeStr]];
@@ -258,7 +259,10 @@
     else if ([model isKindOfClass:[ImgCollectionModel class]]){
         cell = [tableView dequeueReusableCellWithIdentifier:@"ImgCollectionCell" forIndexPath:indexPath];
         [cell setupWithModel:model];
-        [cell setBaseVC:self];
+        [cell setDidSelectImg:^(NSArray *imgData, NSInteger idx) {
+            ImgBrowserViewController* vc = [ImgBrowserViewController viewControllerWithImgArray:imgData andKeyPath:@"" andStartIdx:idx];
+            [self.navigationController pushViewController:vc animated:YES];
+        }];
     }else if ([model isKindOfClass:[TitleAndValueModel class]]){
         cell = [tableView dequeueReusableCellWithIdentifier:@"TilteAndValueCell" forIndexPath:indexPath];
         [cell setupWithModel:model];
