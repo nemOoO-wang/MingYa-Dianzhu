@@ -13,5 +13,6 @@
 @property (nonatomic,assign) IBInspectable CGFloat radius;
 @property (nonatomic,assign) IBInspectable CGFloat insetX;
 @property (nonatomic,assign) IBInspectable BOOL hideBorder;
+@property (nonatomic,assign) IBInspectable BOOL isMYLogin;
 
 @end

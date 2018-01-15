@@ -35,4 +35,14 @@ IB_DESIGNABLE
         self.layer.borderColor = [[UIColor whiteColor] CGColor];
     }
 }
+
+
+
+-(void)setIsMYLogin:(BOOL)isMYLogin{
+    _isMYLogin = isMYLogin;
+    if (isMYLogin) {
+        self.layer.borderColor = [[UIColor colorWithHexString:@"E22028"] CGColor];
+    }
+}
+
 @end

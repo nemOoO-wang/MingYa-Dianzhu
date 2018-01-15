@@ -42,112 +42,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="login" animates="NO" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="yD0-lK-SJn"/>
                         <segue destination="83S-8D-D8o" kind="show" identifier="logged" id="TWO-VI-1Uz"/>
+                        <segue destination="fJw-yD-cwm" kind="show" identifier="login" id="feA-Rn-ZWv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zzM-To-BH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5430" y="-3376"/>
-        </scene>
-        <!--Login View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="640152307" borderStyle="roundedRect" placeholder="请输入帐号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="s0Z-X4-2eV" customClass="NMTextField">
-                                <rect key="frame" x="48" y="328" width="279" height="30"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="insetX">
-                                        <real key="value" value="22"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="942703062" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pIx-Hf-sP0" customClass="NMTextField">
-                                <rect key="frame" x="48" y="378" width="279" height="30"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                        <real key="value" value="15"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="insetX">
-                                        <real key="value" value="22"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="KIc-K4-sGm">
-                                <rect key="frame" x="115" y="112" width="145" height="145"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="145" id="FiB-lx-TPn"/>
-                                    <constraint firstAttribute="width" secondItem="KIc-K4-sGm" secondAttribute="height" multiplier="1:1" id="jkB-oq-967"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Uk-ha-N9q" customClass="NMButton">
-                                <rect key="frame" x="48" y="456" width="279" height="48"/>
-                                <color key="backgroundColor" red="0.22352941176470587" green="0.56862745098039214" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="ZiQ-QE-8ad"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="登录">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
-                                        <real key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="textInset">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="clickLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V8q-Zo-V6i"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="pIx-Hf-sP0" firstAttribute="leading" secondItem="s0Z-X4-2eV" secondAttribute="leading" id="6Tk-Fe-g3T"/>
-                            <constraint firstItem="pIx-Hf-sP0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Nl-rl-dy8"/>
-                            <constraint firstItem="4Uk-ha-N9q" firstAttribute="top" secondItem="pIx-Hf-sP0" secondAttribute="bottom" constant="48" id="KrT-ze-CuE"/>
-                            <constraint firstItem="KIc-K4-sGm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MhB-rf-kMq"/>
-                            <constraint firstItem="KIc-K4-sGm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="112" id="VLp-dk-qri"/>
-                            <constraint firstItem="4Uk-ha-N9q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="48" id="Vys-AL-Ylr"/>
-                            <constraint firstItem="4Uk-ha-N9q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e5E-rB-3p5"/>
-                            <constraint firstItem="pIx-Hf-sP0" firstAttribute="top" secondItem="s0Z-X4-2eV" secondAttribute="bottom" constant="20" id="efn-U4-S5i"/>
-                            <constraint firstItem="s0Z-X4-2eV" firstAttribute="top" secondItem="KIc-K4-sGm" secondAttribute="bottom" constant="71" id="izY-dy-Ko4"/>
-                            <constraint firstItem="4Uk-ha-N9q" firstAttribute="width" secondItem="s0Z-X4-2eV" secondAttribute="width" id="lh5-Ha-pV7"/>
-                            <constraint firstItem="s0Z-X4-2eV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="twS-7Q-hLQ"/>
-                        </constraints>
-                    </view>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <outlet property="accountTextField" destination="s0Z-X4-2eV" id="6Td-cc-TFG"/>
-                        <outlet property="pswTextField" destination="pIx-Hf-sP0" id="8Jm-Xy-Ve1"/>
-                        <outlet property="subviewsOffset" destination="VLp-dk-qri" id="1Mf-ct-leJ"/>
-                        <segue destination="83S-8D-D8o" kind="show" identifier="login" id="q6A-bK-0SH"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5430" y="-2549"/>
         </scene>
         <!--地图-->
         <scene sceneID="0if-4t-tcB">
@@ -6327,6 +6228,112 @@
             </objects>
             <point key="canvasLocation" x="16638" y="-1105"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="1q8-ba-pL2">
+            <objects>
+                <viewController id="fJw-yD-cwm" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mho-Tc-wVJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="sse-e0-gCE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sm9-be-KPs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" borderStyle="roundedRect" placeholder="请输入帐号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LUg-ce-tmf" customClass="NMTextField">
+                                <rect key="frame" x="41.5" y="352" width="292.5" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="insetX">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isMYLogin" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RXh-Sc-pGh" customClass="NMTextField">
+                                <rect key="frame" x="41.5" y="392" width="292.5" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="insetX">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isMYLogin" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZW-jh-z8M" customClass="NMButton">
+                                <rect key="frame" x="41.5" y="438" width="292.5" height="48"/>
+                                <color key="backgroundColor" red="0.8862745098" green="0.12549019610000001" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="7Td-9Z-R0Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textInset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clickLogin:" destination="fJw-yD-cwm" eventType="touchUpInside" id="tlD-aG-hA0"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginTop" translatesAutoresizingMaskIntoConstraints="NO" id="MAI-Z0-zBN">
+                                <rect key="frame" x="75" y="64" width="225" height="30"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginMiddle" translatesAutoresizingMaskIntoConstraints="NO" id="vGN-oc-ziv">
+                                <rect key="frame" x="95.5" y="164" width="183" height="139"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBottom" translatesAutoresizingMaskIntoConstraints="NO" id="RhG-jZ-M2J">
+                                <rect key="frame" x="94" y="580" width="187" height="41"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LUg-ce-tmf" firstAttribute="centerY" secondItem="sm9-be-KPs" secondAttribute="centerY" multiplier="1.1" id="3XX-Hs-Z8g"/>
+                            <constraint firstItem="PZW-jh-z8M" firstAttribute="width" secondItem="LUg-ce-tmf" secondAttribute="width" id="4ne-Cz-w0q"/>
+                            <constraint firstItem="vGN-oc-ziv" firstAttribute="centerX" secondItem="sm9-be-KPs" secondAttribute="centerX" id="A15-PI-8jD"/>
+                            <constraint firstItem="MAI-Z0-zBN" firstAttribute="centerX" secondItem="sm9-be-KPs" secondAttribute="centerX" id="ERi-9m-c2o"/>
+                            <constraint firstItem="RXh-Sc-pGh" firstAttribute="top" secondItem="LUg-ce-tmf" secondAttribute="bottom" constant="10" id="I7l-y8-iU7"/>
+                            <constraint firstItem="PZW-jh-z8M" firstAttribute="centerX" secondItem="sm9-be-KPs" secondAttribute="centerX" id="KKa-UH-I2L"/>
+                            <constraint firstItem="sse-e0-gCE" firstAttribute="top" secondItem="RhG-jZ-M2J" secondAttribute="bottom" constant="46" id="QcN-gZ-x4f"/>
+                            <constraint firstItem="RhG-jZ-M2J" firstAttribute="centerX" secondItem="sm9-be-KPs" secondAttribute="centerX" id="RUR-HL-PJi"/>
+                            <constraint firstItem="vGN-oc-ziv" firstAttribute="centerYWithinMargins" secondItem="sm9-be-KPs" secondAttribute="centerY" multiplier="0.7" id="UVE-6S-g2L"/>
+                            <constraint firstItem="RXh-Sc-pGh" firstAttribute="leading" secondItem="LUg-ce-tmf" secondAttribute="leading" id="bc9-tO-RR2"/>
+                            <constraint firstItem="LUg-ce-tmf" firstAttribute="width" secondItem="sm9-be-KPs" secondAttribute="width" multiplier="0.7" id="mLN-Kb-PYy"/>
+                            <constraint firstItem="LUg-ce-tmf" firstAttribute="centerX" secondItem="sm9-be-KPs" secondAttribute="centerX" id="mhR-Rp-uLx"/>
+                            <constraint firstItem="RXh-Sc-pGh" firstAttribute="centerX" secondItem="sm9-be-KPs" secondAttribute="centerX" id="nbb-kb-VJ8"/>
+                            <constraint firstItem="MAI-Z0-zBN" firstAttribute="top" secondItem="mho-Tc-wVJ" secondAttribute="bottom" constant="44" id="qiI-Ws-Re8"/>
+                            <constraint firstItem="PZW-jh-z8M" firstAttribute="top" secondItem="RXh-Sc-pGh" secondAttribute="bottom" constant="16" id="rGj-CK-S8J"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="accountTextField" destination="LUg-ce-tmf" id="pZ6-kU-pVK"/>
+                        <outlet property="pswTextField" destination="RXh-Sc-pGh" id="5gB-LW-vkO"/>
+                        <segue destination="83S-8D-D8o" kind="show" identifier="login" id="qXC-8j-MnO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPc-TU-rlP" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5430" y="-2545"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Star" width="22" height="20"/>
@@ -6356,7 +6363,9 @@
         <image name="icon_word2" width="56" height="56"/>
         <image name="icon_yellow" width="56" height="56"/>
         <image name="jiantou_shang" width="9" height="5"/>
-        <image name="logo" width="132" height="132"/>
+        <image name="loginBottom" width="187" height="41"/>
+        <image name="loginMiddle" width="183" height="139"/>
+        <image name="loginTop" width="225" height="30"/>
         <image name="next" width="7" height="13"/>
         <image name="no_head" width="56" height="56"/>
         <image name="tab_jibenxinxi" width="22" height="24"/>
@@ -6369,6 +6378,6 @@
         <segue reference="viI-Yp-VDP"/>
         <segue reference="oC4-q4-R2Z"/>
         <segue reference="gO8-VZ-BoL"/>
-        <segue reference="q6A-bK-0SH"/>
+        <segue reference="qXC-8j-MnO"/>
     </inferredMetricsTieBreakers>
 </document>
