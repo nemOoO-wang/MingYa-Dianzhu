@@ -37,6 +37,7 @@
 - (IBAction)clickLogin:(id)sender {
     [self.pswTextField resignFirstResponder];
     [self.accountTextField resignFirstResponder];
+    [[NSUserDefaults standardUserDefaults]setObject:self.accountTextField.text forKey:@"loggedAccount"];
     
     [SVProgressHUD show];
     NSString *pswMD5Str = [MD5Utils md5WithString:self.pswTextField.text];
@@ -130,6 +131,12 @@
             selector:@selector(keyboardWillShow:)
             name:UIKeyboardWillShowNotification
             object:nil];
+    // init text field
+    NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
+    if ([[df objectForKey:@"loggedAccount"] isKindOfClass:[NSString class]]) {
+        self.accountTextField.text = [df objectForKey:@"loggedAccount"];
+    }
+    self.pswTextField.text = @"";
     
 }
 

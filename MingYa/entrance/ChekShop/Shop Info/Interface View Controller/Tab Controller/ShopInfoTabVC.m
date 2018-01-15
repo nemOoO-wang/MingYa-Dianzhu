@@ -24,6 +24,14 @@
 }
 
 - (IBAction)clickQuitBtn:(id)sender {
+    // user default
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"token"];
+    [defaults removeObjectForKey:@"projectName"];
+    [defaults removeObjectForKey:@"projectId"];
+    [defaults removeObjectForKey:@"brandId"];
+    [defaults synchronize];
+    
     [self.navigationController dismissViewControllerAnimated:YES completion:^{
         //
     }];

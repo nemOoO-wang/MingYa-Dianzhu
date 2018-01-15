@@ -67,9 +67,11 @@
 
 # pragma mark - prepare4Login
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    UINavigationController *naviVC = [segue destinationViewController];
-    ShopInfoTabVC *vc = [[naviVC viewControllers]firstObject];
-    vc.projectID = [[MYUser defaultUser] projectId];
+    if ([[segue destinationViewController] isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *naviVC = [segue destinationViewController];
+        ShopInfoTabVC *vc = [[naviVC viewControllers]firstObject];
+        vc.projectID = [[MYUser defaultUser] projectId];
+    }
 }
 
 

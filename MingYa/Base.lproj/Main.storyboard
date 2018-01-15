@@ -67,7 +67,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
                                         <real key="value" value="15"/>
@@ -82,7 +82,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="radius">
                                         <real key="value" value="15"/>
@@ -1535,7 +1535,7 @@
             </objects>
             <point key="canvasLocation" x="13430" y="-4176"/>
         </scene>
-        <!--工程查询-->
+        <!--进度查询-->
         <scene sceneID="1cn-DX-5mU">
             <objects>
                 <tableViewController id="Ip0-3O-nib" customClass="CheckProjectTableVC" sceneMemberID="viewController">
@@ -1869,7 +1869,7 @@
                             <outlet property="delegate" destination="Ip0-3O-nib" id="L2G-oe-Idg"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="工程查询" image="tab_jindu" id="jbV-BT-wnc">
+                    <tabBarItem key="tabBarItem" title="进度查询" image="tab_jindu" id="jbV-BT-wnc">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="image" value="tab_jindu2"/>
                         </userDefinedRuntimeAttributes>
@@ -6369,6 +6369,6 @@
         <segue reference="viI-Yp-VDP"/>
         <segue reference="oC4-q4-R2Z"/>
         <segue reference="gO8-VZ-BoL"/>
-        <segue reference="TWO-VI-1Uz"/>
+        <segue reference="q6A-bK-0SH"/>
     </inferredMetricsTieBreakers>
 </document>

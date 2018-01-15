@@ -58,7 +58,9 @@
                     NSString *suffixStr = fileDic[@"constructionSuffix"];
                     if ([@"jpg jpeg png gif JPG JPEG PNG GIF" containsString:suffixStr]) {
                         // 图片
-                        [tmpimgMArr addObject:fileStr];
+                        if (fileStr && [fileStr length] > 1) {
+                            [tmpimgMArr addObject:fileStr];
+                        }
                     }else{
                         // 文件
                         NSString *wFileName = [NSString stringWithFormat:@"%@.%@",fileDic[@"contentName"],suffixStr];
@@ -86,7 +88,9 @@
                     NSString *suffixStr = fileDic[@"contentSuffix"];
                     if ([@"jpg jpeg png gif JPG JPEG PNG GIF" containsString:suffixStr]) {
                         // 图片
-                        [tmpimgMArr addObject:fileStr];
+                        if (fileStr && [fileStr length] > 1) {
+                            [tmpimgMArr addObject:fileStr];
+                        }
                     }else{
                         // 文件
                         NSString *wFileName = [NSString stringWithFormat:@"%@.%@",fileDic[@"contentName"],suffixStr];
@@ -97,7 +101,11 @@
                 
                 // tmpFileArr
                 ImgCollectionModel *imgModel = [ImgCollectionModel modelWithTitleStr:@"设计图片" andImgDatas:tmpimgMArr];
-                self.modelDatas = @[tmpFileArr, @[imgModel]];
+                if (tmpimgMArr == nil || [tmpimgMArr count] == 0) {
+                    self.modelDatas = @[tmpFileArr];
+                }else{
+                    self.modelDatas = @[tmpFileArr, @[imgModel]];
+                }
                 [self.tableView reloadData];
                 
                 for (FileItemModel* f in tmpFileArr) {

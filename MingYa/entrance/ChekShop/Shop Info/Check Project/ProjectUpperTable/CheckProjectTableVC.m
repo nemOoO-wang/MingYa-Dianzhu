@@ -307,6 +307,9 @@
 
 #pragma mark - select cell
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row > self.speedCode/100) {
+        return;
+    }
     
     switch (indexPath.row) {
         case 0:
