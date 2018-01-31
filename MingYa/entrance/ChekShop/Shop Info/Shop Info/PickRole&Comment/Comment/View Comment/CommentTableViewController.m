@@ -122,13 +122,13 @@
     [super viewDidLoad];
 }
 
--(void)viewWillAppear:(BOOL)animated{
+-(void)viewDidAppear:(BOOL)animated{
     // refresh
     NSString *token = [[MYUser defaultUser] token];
     NSString *projectId = [[MYUser defaultUser] projectId];
     
     [SVProgressHUD show];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSDictionary *paramDic = @{@"token":token , @"projectId":projectId, @"evaltype":[NSNumber numberWithInteger:self.role]};
         [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"getEval" andParam:paramDic andHeader:nil andSuccess:^(id data) {
             // success

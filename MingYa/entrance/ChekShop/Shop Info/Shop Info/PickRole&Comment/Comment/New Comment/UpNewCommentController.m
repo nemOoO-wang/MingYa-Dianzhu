@@ -42,6 +42,7 @@
         // new con
         CommentTableViewController *newCon = [self.storyboard instantiateViewControllerWithIdentifier:@"CommentTable"];
         newCon.title = self.title;
+        newCon.role = self.role;
         PickRoleViewController *pickCon = conArr[conArr.count-2];
         pickCon.tmpCommentTableVC = newCon;
         [conArr insertObject:newCon atIndex:conArr.count-1];
