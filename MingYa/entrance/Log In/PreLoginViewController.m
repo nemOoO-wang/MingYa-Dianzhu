@@ -30,6 +30,8 @@
 -(void)viewDidAppear:(BOOL)animated{
     [SVProgressHUD showWithStatus:@"尝试自动登录..."];
     
+    [NSThread sleepForTimeInterval:2];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *token = [defaults objectForKey:@"token"];
     NSString *brandId = [defaults objectForKey:@"brandId"];

@@ -333,7 +333,7 @@
 				<key>canEdit</key>
 				<false/>
 				<key>name</key>
-				<string>待审图纸</string>
+				<string>组长待审图纸</string>
 			</dict>
 			<dict>
 				<key>editSegueDic</key>
