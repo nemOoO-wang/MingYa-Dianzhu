@@ -72,7 +72,7 @@
     NSString *uId = [[MYUser defaultUser] userId];
     // param dic
     NSDictionary *paramDict = @{@"token":token, @"method":@"getAllSpeedDetailById", @"page":@0, @"keyWord":@"",@"searchValue":projectID};
-    [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"/getList" andParam:paramDict andHeader:nil andSuccess:^(id data) {
+    [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"getList" andParam:paramDict andHeader:nil andSuccess:^(id data) {
         // success
         NSArray *requestArr = data[@"data"];
         self.workFlowInfoArr = requestArr;
@@ -508,7 +508,8 @@
             return tmpFlowDict[@"speedId"];
         }
     }
-    return 0;
+    [SVProgressHUD showErrorWithStatus:@"找不到这个项目的数据，请咨询后台！"];
+    return @"";
 }
 
 // get finish time
