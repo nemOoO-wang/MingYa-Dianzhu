@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet NMTextField *accountTextField;
 @property (weak, nonatomic) IBOutlet NMTextField *pswTextField;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *subviewsOffset;
+@property (weak, nonatomic) IBOutlet NMButton *regBtn;
 
 @property (nonatomic,assign) CGFloat keyboardHeight;
 @property (nonatomic,assign) const CGFloat constraintY;
@@ -137,7 +138,13 @@
         self.accountTextField.text = [df objectForKey:@"loggedAccount"];
     }
     self.pswTextField.text = @"";
-    
+    // register?
+    [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"login/get/" andParam:nil andHeader:nil andSuccess:^(id data) {
+        BOOL result = !(BOOL)data;
+        self.regBtn.hidden = result;
+    } andFailed:^(NSString *str) {
+        NSLog(@"%@",str);
+    }];
 }
 
 // set keyboard height
@@ -171,8 +178,10 @@
 # pragma mark - prepare4Login
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     UINavigationController *naviVC = [segue destinationViewController];
-    ShopInfoTabVC *vc = [[naviVC viewControllers]firstObject];
-    vc.projectID = [[MYUser defaultUser] projectId];
+    if ([[[naviVC viewControllers]firstObject] isKindOfClass:[ShopInfoTabVC class]]) {
+        ShopInfoTabVC *vc = [[naviVC viewControllers]firstObject];
+        vc.projectID = [[MYUser defaultUser] projectId];
+    }
 }
 
 @end

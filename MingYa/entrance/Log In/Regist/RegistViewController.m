@@ -30,7 +30,7 @@
     // via net
     NSString *usrName = self.usrNameTxtView.text;
     NSString *pwdStr = [MD5Utils md5WithString:self.pswTxtView.text];
-    NSDictionary *paramDic = @{@"userTel":usrName, @"pwd":pwdStr, @"type":@1};
+    NSDictionary *paramDic = @{@"userTel":usrName, @"pwd":pwdStr, @"type":@3};
     [[BeeNet sharedInstance] requestWithType:Request_POST andUrl:@"login/fake" andParam:paramDic andHeader:nil andSuccess:^(id data) {
         NSLog(@"success");
         

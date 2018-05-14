@@ -64,6 +64,7 @@
 		BA7EFE421F975423005F02BF /* MessageTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7EFE411F975423005F02BF /* MessageTableController.m */; };
 		BA7EFE451F9754C6005F02BF /* MessageTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA7EFE441F9754C6005F02BF /* MessageTableCell.m */; };
 		BA808B801FD9297500B3FA8A /* SearchRecords.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA808B7F1FD9297500B3FA8A /* SearchRecords.plist */; };
+		BA80C5A5208EC7C000E3DA1C /* RegistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA80C5A3208EC7C000E3DA1C /* RegistViewController.m */; };
 		BA86C44F1FA33C51005A41D8 /* NMSmallTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA86C44E1FA33C51005A41D8 /* NMSmallTextButton.m */; };
 		BA86C5281FBC412600272127 /* MYUser.m in Sources */ = {isa = PBXBuildFile; fileRef = BA86C5271FBC412600272127 /* MYUser.m */; };
 		BA8CB9CB1FF788EB00F90F3B /* PickRoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8CB9CA1FF788EB00F90F3B /* PickRoleViewController.m */; };
@@ -241,6 +242,8 @@
 		BA7EFE431F9754C6005F02BF /* MessageTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageTableCell.h; sourceTree = "<group>"; };
 		BA7EFE441F9754C6005F02BF /* MessageTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageTableCell.m; sourceTree = "<group>"; };
 		BA808B7F1FD9297500B3FA8A /* SearchRecords.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SearchRecords.plist; sourceTree = "<group>"; };
+		BA80C5A3208EC7C000E3DA1C /* RegistViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistViewController.m; sourceTree = "<group>"; };
+		BA80C5A4208EC7C000E3DA1C /* RegistViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistViewController.h; sourceTree = "<group>"; };
 		BA86C44D1FA33C51005A41D8 /* NMSmallTextButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NMSmallTextButton.h; sourceTree = "<group>"; };
 		BA86C44E1FA33C51005A41D8 /* NMSmallTextButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NMSmallTextButton.m; sourceTree = "<group>"; };
 		BA86C5261FBC412600272127 /* MYUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYUser.h; sourceTree = "<group>"; };
@@ -672,6 +675,7 @@
 		BA2B919A1F949BA600DFBC4F /* Log In */ = {
 			isa = PBXGroup;
 			children = (
+				BA80C5A2208EC7C000E3DA1C /* Regist */,
 				BA61CC451FEF52D400C9AD42 /* PreLoginViewController.h */,
 				BA61CC461FEF52D400C9AD42 /* PreLoginViewController.m */,
 				BAB8D54E1F8CA4A40029B6FA /* LoginViewController.h */,
@@ -973,6 +977,15 @@
 				BA808B7F1FD9297500B3FA8A /* SearchRecords.plist */,
 			);
 			path = MYPlists;
+			sourceTree = "<group>";
+		};
+		BA80C5A2208EC7C000E3DA1C /* Regist */ = {
+			isa = PBXGroup;
+			children = (
+				BA80C5A3208EC7C000E3DA1C /* RegistViewController.m */,
+				BA80C5A4208EC7C000E3DA1C /* RegistViewController.h */,
+			);
+			path = Regist;
 			sourceTree = "<group>";
 		};
 		BA8CB9C81FF7881F00F90F3B /* PickRole&Comment */ = {
@@ -1555,6 +1568,7 @@
 				D8552B751F9EE64300FC077D /* GoodsListItemModel.m in Sources */,
 				BA563C9A1FC8284C0066345F /* ProjectRightCollectionCell.m in Sources */,
 				BA7EFE421F975423005F02BF /* MessageTableController.m in Sources */,
+				BA80C5A5208EC7C000E3DA1C /* RegistViewController.m in Sources */,
 				D8BC877C1F98E543004E02D5 /* FileItemCell.m in Sources */,
 				BA5639631F94BE7D00C4AE4B /* SearchViewController.m in Sources */,
 				BAB8D5501F8CA4A40029B6FA /* LoginViewController.m in Sources */,
@@ -1784,7 +1798,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jyt.mingyaDZ;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jyt.mingyaDZReg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1803,7 +1817,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jyt.mingyaDZ;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jyt.mingyaDZReg;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
