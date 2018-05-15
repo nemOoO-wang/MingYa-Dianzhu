@@ -19,7 +19,6 @@
 		BA2B91881F946D3800DFBC4F /* NMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2B91871F946D3800DFBC4F /* NMTextView.m */; };
 		BA2B918C1F94730500DFBC4F /* CheckProjectTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2B918B1F94730500DFBC4F /* CheckProjectTableVC.m */; };
 		BA2B918F1F94842900DFBC4F /* SubTableViewWithinCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2B918E1F94842900DFBC4F /* SubTableViewWithinCellView.m */; };
-		BA2B91941F9491E000DFBC4F /* ProjectSubTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2B91931F9491E000DFBC4F /* ProjectSubTableCell.m */; };
 		BA2B91981F949AFF00DFBC4F /* ShopInfoTabVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2B91971F949AFF00DFBC4F /* ShopInfoTabVC.m */; };
 		BA2F1E721FD7EDA80033A2FC /* RoundImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2F1E711FD7EDA80033A2FC /* RoundImgView.m */; };
 		BA3897241FFF6FB7002BF67C /* NMStarBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3897231FFF6FB7002BF67C /* NMStarBtn.m */; };
@@ -109,8 +108,6 @@
 		BA2B918B1F94730500DFBC4F /* CheckProjectTableVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckProjectTableVC.m; sourceTree = "<group>"; };
 		BA2B918D1F94842900DFBC4F /* SubTableViewWithinCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubTableViewWithinCellView.h; sourceTree = "<group>"; };
 		BA2B918E1F94842900DFBC4F /* SubTableViewWithinCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubTableViewWithinCellView.m; sourceTree = "<group>"; };
-		BA2B91921F9491E000DFBC4F /* ProjectSubTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectSubTableCell.h; sourceTree = "<group>"; };
-		BA2B91931F9491E000DFBC4F /* ProjectSubTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectSubTableCell.m; sourceTree = "<group>"; };
 		BA2B91961F949AFF00DFBC4F /* ShopInfoTabVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopInfoTabVC.h; sourceTree = "<group>"; };
 		BA2B91971F949AFF00DFBC4F /* ShopInfoTabVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopInfoTabVC.m; sourceTree = "<group>"; };
 		BA2F1E701FD7EDA80033A2FC /* RoundImgView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundImgView.h; sourceTree = "<group>"; };
@@ -447,8 +444,6 @@
 		BA2B91951F94921200DFBC4F /* ProjectSubTable */ = {
 			isa = PBXGroup;
 			children = (
-				BA2B91921F9491E000DFBC4F /* ProjectSubTableCell.h */,
-				BA2B91931F9491E000DFBC4F /* ProjectSubTableCell.m */,
 				BA2B918D1F94842900DFBC4F /* SubTableViewWithinCellView.h */,
 				BA2B918E1F94842900DFBC4F /* SubTableViewWithinCellView.m */,
 			);
@@ -1046,7 +1041,6 @@
 				D8BC877E1F98E543004E02D5 /* TitleCell.m in Sources */,
 				BACB7BA61FE252AA00555E8F /* ProjectConfirmViewController.m in Sources */,
 				D8DB5B661F99922A00D3D08E /* ImgCollectionCell.m in Sources */,
-				BA2B91941F9491E000DFBC4F /* ProjectSubTableCell.m in Sources */,
 				BAB6D3231FDE7B1A000FC964 /* AliOSSKit.m in Sources */,
 				D8375F231FA17D3B0000449D /* TitleAndValueModel.m in Sources */,
 				BA7221421F959EEA00E2887F /* ProjectFlow.m in Sources */,
