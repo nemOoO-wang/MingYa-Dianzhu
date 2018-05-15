@@ -6,7 +6,6 @@ target 'MingYa' do
   #use_frameworks!
 
   # Pods for MingYa
-pod 'AMap3DMap'
 pod 'QBImagePickerController'
 pod 'Masonry'
 pod 'SDWebImage'
@@ -14,7 +13,6 @@ pod 'SVProgressHUD'
 pod 'AFNetworking'
 pod 'MJRefresh'
 pod 'AliyunOSSiOS'
-pod 'JPush'
 pod 'IQKeyboardManager'
 
 end

@@ -15,8 +15,6 @@
 #import "ProjectUpperTableCell.h"
 /// viewcontrollers
 #import "ProjectConfirmViewController.h"
-#import "ArrangePeopleViewController.h"
-#import "NotShippedViewController.h"
 #import "NormalUpLoadImgViewController.h"
 #import "ConstructionViewController.h"
 #import "FileAndImgViewController.h"
@@ -391,111 +389,6 @@
         controller.sectionName = sectionName;
         controller.showAsSingleCollection = YES;
     }
-    
-    //        if ([cellName isEqualToString:@"待审材料单"] || [cellName isEqualToString:@"已审材料单"]) {
-    //            //节点查看第19
-    //            detailId = [self getDetailIdWithSpeedCode:408];
-    //        }else if ([cellName isEqualToString:@"已审图纸"] || [cellName isEqualToString:@"待审图纸"] || [cellName isEqualToString:@"待下材料单"]){
-    //            //节点查看第12
-    //            detailId = [self getDetailIdWithSpeedCode:401];
-    //        }else if ([cellName isEqualToString:@"客户已审批"] || [cellName isEqualToString:@"测量完毕"] || [cellName isEqualToString:@"店主已确认"] || [cellName isEqualToString:@"设计完毕"]){
-    //            //查看上一个
-    //            detailId = [self getDetailIdWithSpeedCode:speedCode-1];
-    //            if ([cellName isEqualToString:@"店主已确认"]) {
-    //                controller.shouldShowBanner = YES;
-    //            }
-    //        }
-    
-//    // 通用传递值
-//    NSString *cellName = self.segueAttributesDict[@"cellName"];
-//    NSString *sectionName = self.segueAttributesDict[@"viewType"];
-//    NSInteger speedCode = [self.segueAttributesDict[@"speedCode"] integerValue];
-//    NSString *detailId = [self getDetailIdWithSpeedCode:speedCode];
-//    NSDate *finishDate = [self getDateWithSpeedCode:speedCode];
-//
-//    if ([segue.identifier isEqualToString:@"confirm"]) {
-//        /// 备货中
-//        // 确认挂钢
-//        ProjectConfirmViewController *controller = segue.destinationViewController;
-//        controller.projectId = self.projectID;
-////        NSInteger speedCode = [self.segueAttributesDict[@"speedCode"] integerValue];
-//        controller.sc = speedCode;
-//        controller.detailId = detailId;
-//
-//    }else if ([segue.identifier isEqualToString:@"arrangeWorker"]){
-//        /// 物流中
-//        // 货到待施工、安排施工人员完毕
-//        ArrangePeopleViewController *controller = segue.destinationViewController;
-//        controller.projectId = self.projectID;
-//        if ([cellName isEqualToString:@"货到待施工"]) {
-//            // 货到待施工
-//            controller.isFinishArrange = NO;
-//        }else{
-//            // 安排施工人员完毕
-//            controller.isFinishArrange = YES;
-//        }
-//
-//    }else if([segue.identifier isEqualToString:@"sendParcel"]){
-//        // 待发货、已发货
-//        NotShippedViewController *controller = segue.destinationViewController;
-//        controller.projectId = self.projectID;
-//        if ([cellName isEqualToString:@"待发货"]) {
-//            // 待发货
-//            controller.isShipped = NO;
-//        }else{
-//            // 已发货
-//            controller.isShipped = YES;
-//        }
-//
-//    }else if([segue.identifier isEqualToString:@"uploadImg"]){
-//        // 上传照片
-//        // 上传测量图片、所有材料打包（提交）
-//         NormalUpLoadImgViewController *controller = segue.destinationViewController;
-//        controller.projectId = self.projectID;
-//        controller.sectionName = sectionName;
-//        controller.sc = speedCode;
-//        controller.detailId = detailId;
-//
-//        if ([cellName isEqualToString:@"测量中"]) {
-//            // 测量中
-//            controller.maxImgCount = 20;
-//        }else{
-//            // 所有材料打包
-//            controller.maxImgCount = 9;
-//        }
-//
-//    }else if([segue.identifier isEqualToString:@"checkWorking"]){
-//        // 施工(中、完毕)、所有材料已打包、测量完毕
-//        ConstructionViewController *controller = segue.destinationViewController;
-//        controller.projectId = self.projectID;
-//        controller.sc = speedCode;
-//        controller.detailId = detailId;
-//        controller.sectionName = cellName;
-//        //self.segueAttributesDict[@"viewType"];
-//
-//    }else if ([segue.identifier isEqualToString:@"fileAndImg"]){
-//        // 重复页面：设计完毕，店主待/已确认，客户已审批，以/待审图纸，待生产招聘，待审材料单
-//        // 重复页面，不同请求：施工完毕
-//        FileAndImgViewController *controller = segue.destinationViewController;
-//        controller.projectId = self.projectID;
-//        controller.sc = speedCode;
-//        controller.finishDate = finishDate;
-//        if ([cellName isEqualToString:@"待审材料单"] || [cellName isEqualToString:@"已审材料单"]) {
-//            //节点查看第19
-//            detailId = [self getDetailIdWithSpeedCode:408];
-//        }else if ([cellName isEqualToString:@"已审图纸"] || [cellName isEqualToString:@"待审图纸"] || [cellName isEqualToString:@"待下材料单"]){
-//            //节点查看第12
-//            detailId = [self getDetailIdWithSpeedCode:401];
-//        }else if ([cellName isEqualToString:@"客户已审批"] || [cellName isEqualToString:@"测量完毕"] || [cellName isEqualToString:@"店主已确认"] || [cellName isEqualToString:@"设计完毕"]){
-//            //查看上一个
-//            detailId = [self getDetailIdWithSpeedCode:speedCode-1];
-//            if ([cellName isEqualToString:@"店主已确认"]) {
-//                controller.shouldShowBanner = YES;
-//            }
-//        }
-//        controller.detailId = detailId;
-//        controller.sectionName = sectionName;
-//    }
 }
 
 // get detail id

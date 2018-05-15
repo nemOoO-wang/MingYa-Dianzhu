@@ -13,7 +13,6 @@
 #import "NMShop.h"
 #import "ShopHeadTableViewCell.h"
 #import "PickRoleViewController.h"
-//#import "CommentTableViewController.h"
 /// models
 #import "MYUser.h"
 #import "BeeNet.h"
@@ -113,6 +112,7 @@
     NSArray *switchArr = @[@"project info", @"basic", @"phone", @"detail & phone", @"disclosure"];
     NSInteger idenIndex = [switchArr indexOfObject:cellIdentifier];
     id key4projectDic = infoDict[@"requestKey"];
+    NSString *text1, *text2;
     switch (idenIndex) {
         case 0:
             // top
@@ -162,8 +162,10 @@
             
         case 3:
             // name & phone
-            cell.rightText = self.projectDict[key4projectDic[0]];
-            cell.phontNumText = self.projectDict[key4projectDic[1]];
+            text1 = self.projectDict[key4projectDic[0]];
+            text2 = self.projectDict[key4projectDic[1]];
+            cell.rightText = text1;
+            cell.phontNumText = text2;
             break;
             
         case 4:

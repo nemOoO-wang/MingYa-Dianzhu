@@ -10,7 +10,6 @@
 #import "TilteAndValueCell.h"
 #import "ImgCollectionCell.h"
 #import "NormalUpLoadImgViewController.h"
-#import <SVProgressHUD.h>
 #import "MYUser.h"
 #import "ConstructionDatePickerVC.h"
 #import "SGZImgSet.h"
@@ -132,107 +131,6 @@
             }
             self.checkConstructModelData = [tmpMutArr copy];
             [self.tableView reloadData];
-        } andFailed:^(NSString *str) {
-            // fail
-            NSLog(@"%@",str);
-        }];
-    }else if ([self.sectionName isEqualToString:@"施工完毕"]){
-        // 施工完毕
-        self.showAsSingleCollection = YES;
-        NSDictionary *paramDic = @{@"token":token, @"method":@"getFininsh", @"page":@0, @"searchValue":self.projectId};
-        [[BeeNet sharedInstance] requestWithType:Request_GET andUrl:@"getList" andParam:paramDic andHeader:nil andSuccess:^(id data) {
-            // success
-            NSMutableArray *tmpMutArr = [[NSMutableArray alloc] init];
-            NSDictionary *tmpDic = data[@"data"];
-            // title model
-            
-            NSDateFormatter *df = [[NSDateFormatter alloc] init];
-            [df setDateFormat:@"yyyy-MM-dd"];
-            NSDate *date = [NSDate dateWithTimeIntervalSince1970:[tmpDic[@"constructionDate"]integerValue]/1000.f];
-            NSString *upStr = [NSString stringWithFormat:@"上传员工：%@ %@",tmpDic[@"stationName"],tmpDic[@"constructionNickName"]];
-            NSString *lowStr = [NSString stringWithFormat:@"上传时间：%@",[df stringFromDate:date]];
-            TitleAndValueModel *tModel = [TitleAndValueModel modelWithTitle:upStr andValue:lowStr];
-            [tmpMutArr addObject:@[tModel]];
-            // imgs model
-            NSMutableArray *imgMutTmpArr = [[NSMutableArray alloc] init];
-            NSArray *tmpArr = tmpDic[@"dataList"];
-            NSLog(@"%@",tmpArr);
-            for (NSDictionary *imgDic in tmpArr) {
-//                NSString *statusStr = [imgDic[@"constructionType"] integerValue]==1? @"施工中":@"施工完毕";
-                NSString *statusStr = @"施工完毕";
-                NSString *personName = imgDic[@"constructionNickName"];
-                NSDate *upDateate = [NSDate dateWithTimeIntervalSince1970:[tmpDic[@"constructionDate"]integerValue]/1000.f];
-                NSString *labelText = (NSString *)[NSString stringWithFormat:@"%@\n%@\t%@",statusStr,personName,[df stringFromDate:upDateate]];
-                // 切割 img url
-                NSString *imgsPath = imgDic[@"constructionUrl"];
-                NSArray *strArr = [imgsPath componentsSeparatedByString:@","];
-                ImgCollectionModel *imgModel = [ImgCollectionModel modelWithTitleStr:labelText andImgDatas:strArr];
-                [imgMutTmpArr addObject:imgModel];
-            }
-            if (imgMutTmpArr) {
-                [tmpMutArr addObject:imgMutTmpArr];
-            }
-            self.checkConstructModelData = [tmpMutArr copy];
-            [self.tableView reloadData];
-        } andFailed:^(NSString *str) {
-            // fail
-            NSLog(@"%@",str);
-        }];
-    }else if ([self.sectionName isEqualToString: @"测量完毕"]){
-        // 测量完毕
-        self.showAsSingleCollection = YES;
-        NSDictionary *paramDic = @{@"token":token, @"method":@"getInitContent", @"page":@0, @"searchValue":self.detailId};
-        [[BeeNet sharedInstance]requestWithType:Request_GET andUrl:@"getList" andParam:paramDic andHeader:nil andSuccess:^(id data) {
-            // success
-            NSMutableArray *tmpMArr = [[NSMutableArray alloc] init];
-            NSMutableArray *tmpimgMArr = [[NSMutableArray alloc] init];
-            NSArray *tmpArr = data[@"data"];
-            for (NSDictionary *imgDic in tmpArr) {
-                NSString *imgsStr = imgDic[@"contentUrl"];
-                NSArray *imgUrlArr = [imgsStr componentsSeparatedByString:@","];
-                ImgCollectionModel *imgModel = [ImgCollectionModel modelWithTitleStr:@"测量完毕" andImgDatas:imgUrlArr];
-                [tmpimgMArr addObject:imgModel];
-            }
-            
-            if (tmpimgMArr.count != 0 ) {
-                // 有数据
-                [tmpMArr addObject:tmpimgMArr];
-                self.checkConstructModelData = [tmpMArr copy];
-                [self.tableView reloadData];
-            }else{
-                // 没数据
-                [self scroll2VCIndex:3 withAnimated:NO];
-            }
-        } andFailed:^(NSString *str) {
-            // fail
-            NSLog(@"%@",str);
-        }];
-        
-    }else if ([self.sectionName isEqualToString:@"所有材料已打包"]){
-        // 所有材料已打包
-        self.showAsSingleCollection = YES;
-        NSDictionary *paramDic = @{@"token":token, @"method":@"getInitContent", @"page":@0, @"searchValue":self.detailId};
-        [[BeeNet sharedInstance]requestWithType:Request_GET andUrl:@"getList" andParam:paramDic andHeader:nil andSuccess:^(id data) {
-            // success
-            NSMutableArray *tmpMArr = [[NSMutableArray alloc] init];
-            NSMutableArray *tmpimgMArr = [[NSMutableArray alloc] init];
-            NSArray *tmpArr = data[@"data"];
-            for (NSDictionary *imgDic in tmpArr) {
-                NSString *imgsStr = imgDic[@"contentUrl"];
-                NSArray *imgUrlArr = [imgsStr componentsSeparatedByString:@","];
-                ImgCollectionModel *imgModel = [ImgCollectionModel modelWithTitleStr:@"测量完毕" andImgDatas:imgUrlArr];
-                [tmpimgMArr addObject:imgModel];
-            }
-            
-            if (tmpimgMArr.count != 0 ) {
-                // 有数据
-                [tmpMArr addObject:tmpimgMArr];
-                self.checkConstructModelData = [tmpMArr copy];
-                [self.tableView reloadData];
-            }else{
-                // 没数据
-                [self scroll2VCIndex:3 withAnimated:NO];
-            }
         } andFailed:^(NSString *str) {
             // fail
             NSLog(@"%@",str);
@@ -439,21 +337,7 @@
 
 # pragma mark - prepare4segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
-    if ([segue.identifier isEqualToString:@"stillWorking"]) {
-        NormalUpLoadImgViewController *controller = segue.destinationViewController;
-        controller.isCommitCompleteViewController = NO;
-        controller.projectId = self.projectId;
-        controller.sc = self.sc;
-        
-    }else if ([segue.identifier isEqualToString:@"completeWorking"]){
-        NormalUpLoadImgViewController *controller = segue.destinationViewController;
-        controller.isCommitCompleteViewController = YES;
-        controller.projectId = self.projectId;
-        controller.sc = self.sc;
-        controller.delegate = self;
-        
-    }else if ([segue.identifier isEqualToString:@"pickDate"]){
+    if ([segue.identifier isEqualToString:@"pickDate"]){
         // 选择完成日期
         ConstructionDatePickerVC *controller = segue.destinationViewController;
         controller.projectId = self.projectId;

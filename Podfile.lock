@@ -15,13 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
   - AliyunOSSiOS (2.10.0)
-  - AMap3DMap (6.0.0):
-    - AMapFoundation (~> 1.4)
-  - AMapFoundation (1.4.3)
   - IQKeyboardManager (5.0.8)
-  - JCore (1.1.7)
-  - JPush (3.0.8):
-    - JCore (~> 1.1.7)
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.3)
   - QBImagePickerController (3.4.0)
@@ -33,29 +27,34 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - AliyunOSSiOS
-  - AMap3DMap
   - IQKeyboardManager
-  - JPush
   - Masonry
   - MJRefresh
   - QBImagePickerController
   - SDWebImage
   - SVProgressHUD
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - AliyunOSSiOS
+    - IQKeyboardManager
+    - Masonry
+    - MJRefresh
+    - QBImagePickerController
+    - SDWebImage
+    - SVProgressHUD
+
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   AliyunOSSiOS: 1f42c7b1542f22b75a81127bdb0b0798122a2f1f
-  AMap3DMap: ee8172d81560e9f6548d6e6010444df7e3d00fc7
-  AMapFoundation: 973682cfe60b92efd73a8ef8f1144fa0fa8e1296
   IQKeyboardManager: 266cb7b1d11f94a3e71229d77f960f9a1b538e5b
-  JCore: f7459c81c135281a874a6beafdd321666adcc834
-  JPush: 9574d072cc37e93fa293ba69b43ce763c440943a
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: d022802a0d04eb604fafce3d3677871388713f16
+PODFILE CHECKSUM: a5e263962a0d4a5e675ce5ab7ebaa10828c54126
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0

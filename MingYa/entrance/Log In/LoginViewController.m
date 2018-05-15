@@ -12,7 +12,6 @@
 
 #import "ShopInfoTabVC.h"
 #import "NMTextField.h"
-#import <JPUSHService.h>
 #import <SVProgressHUD.h>
 
 
@@ -64,12 +63,6 @@
             [defaults setObject:projectId forKey:@"projectId"];
             [defaults setObject:projectName forKey:@"projectName"];
             [defaults synchronize];
-            
-            // 店主没有 jpush
-            // set JPush info
-//            [JPUSHService setAlias:tokenStr completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
-//                NSLog(@"irescode:%ld\nialias:%@\nseq:%ld",(long)iResCode,iAlias,(long)seq);
-//            } seq:0];
             
             // segue
             [self performSegueWithIdentifier:@"login" sender:self];
